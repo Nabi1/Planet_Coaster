@@ -1,0 +1,35 @@
+{
+  "title": "attractions",
+  "attraction": [
+    {
+      "id": 1,
+      "name": "attraction1",
+      "ouvreture": "8h00",
+      "fermeture": "19h00",
+      "ageMin": "8",
+      "attente": "36min"
+    },
+    {
+      "id": 1,
+      "name": "attraction1",
+      "ouvreture": "8h00",
+      "fermeture": "19h00",
+      "ageMin": "8",
+      "attente": "36min"
+    }
+  ],
+  "resto": [
+    {
+      "id": 1,
+      "ouvreture": "8h00",
+      "fermeture": "19h00",
+      "prix": "18€"
+    },
+    {
+      "id": 2,
+      "ouvreture": "8h00",
+      "fermeture": "19h00",
+      "prix": "18€"
+    }
+  ]
+}
