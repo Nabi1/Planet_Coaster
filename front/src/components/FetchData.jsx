@@ -33,14 +33,13 @@ class fetchData extends Component {
 
   render() {
     const {data} = this.state;
-    console.log(data.games)
     return (
       <div>
         <ul>
           {this.state.loaded && data.attractions.map(traveler => (
           <li key={traveler.id}>{traveler.type}</li>
           ))}
-        </ul> 
+        </ul>
       </div>
     )
   }
