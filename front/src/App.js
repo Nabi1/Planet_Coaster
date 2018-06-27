@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import FiltersImg from './components/FiltersImg';
-import FiltersText from './components/FiltersText'
+import FiltersText from './components/FiltersText';
+import FetchData from './components/FetchData';
 
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
         <FiltersText />
         <FiltersImg />
+        <FetchData />
       </div>
     );
   }
