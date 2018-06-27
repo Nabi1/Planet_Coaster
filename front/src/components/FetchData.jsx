@@ -5,23 +5,32 @@ class fetchData extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: [],
+      data: [],
+      error: null,
     };
   }
 
   componentDidMount() {
-    fetch('../data.json')
-      .then((response) => {
-        response.json();
-      })
-      .then(data =>
-        this.setState({
-          result: data,
-        })
+    fetch(
+      'https://rawgit.com/Nabi1/Planet_Coaster/createJson/front/src/data.json'
+    )
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            data: result,
+          });
+        },
+        (error) => {
+          this.setState({
+            error,
+          });
+        }
       );
   }
+
   render() {
-    return <div>{this.state.result}</div>;
+    return <div>ok</div>;
   }
 }
 

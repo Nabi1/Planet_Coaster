@@ -1,35 +1,161 @@
 {
   "title": "attractions",
-  "attraction": [
+  "attractions": [
     {
       "id": 1,
+      "type": "Horreur",
       "name": "attraction1",
       "ouvreture": "8h00",
       "fermeture": "19h00",
       "ageMin": "8",
-      "attente": "36min"
+      "attente": "36min",
+      "nbrVomis": 18,
+      "nbrChaussuresPerdues": 345,
+      "nbrMorts": 300,
+      "nbrVisManquantes": 15
     },
     {
-      "id": 1,
+      "id": 2,
+      "type": "Amour",
       "name": "attraction1",
       "ouvreture": "8h00",
       "fermeture": "19h00",
       "ageMin": "8",
-      "attente": "36min"
+      "attente": "36min",
+      "nbrVomis": 18,
+      "nbrChaussuresPerdues": 345,
+      "nbrMorts": 300,
+      "nbrVisManquantes": 15
+    },
+    {
+      "id": 3,
+      "type": "Suicidaire",
+
+      "name": "attraction1",
+      "ouvreture": "8h00",
+      "fermeture": "19h00",
+      "ageMin": "8",
+      "attente": "36min",
+      "nbrVomis": 18,
+      "nbrChaussuresPerdues": 345,
+      "nbrMorts": 300,
+      "nbrVisManquantes": 15
+    },
+    {
+      "id": 4,
+      "type": "Horreur",
+      "name": "attraction1",
+      "ouvreture": "8h00",
+      "fermeture": "19h00",
+      "ageMin": "8",
+      "attente": "36min",
+      "nbrVomis": 18,
+      "nbrChaussuresPerdues": 345,
+      "nbrMorts": 300,
+      "nbrVisManquantes": 15
+    },
+    {
+      "id": 5,
+      "name": "attraction1",
+      "type": "Horreur",
+      "ouvreture": "8h00",
+      "fermeture": "19h00",
+      "ageMin": "8",
+      "attente": "36min",
+      "nbrVomis": 18,
+      "nbrChaussuresPerdues": 345,
+      "nbrMorts": 300,
+      "nbrVisManquantes": 15
     }
   ],
   "resto": [
     {
       "id": 1,
+      "name": "resto",
       "ouvreture": "8h00",
       "fermeture": "19h00",
-      "prix": "18€"
+      "prix": "18€",
+      "nbrIntoxications": 20,
+      "poilsPubiensMoyenParAssiette": 12,
+      "nbrRats": 28,
+      "nbrUrinesDiffParCacahuete": 6
     },
     {
       "id": 2,
+      "name": "resto2",
       "ouvreture": "8h00",
       "fermeture": "19h00",
-      "prix": "18€"
+      "prix": "18€",
+      "nbrIntoxications": 20,
+      "poilsPubiensMoyenParAssiette": 12,
+      "nbrRats": 28,
+      "nbrUrinesDiffParCacahuete": 6
+    },
+    {
+      "id": 3,
+      "name": "resto3",
+      "ouvreture": "8h00",
+      "fermeture": "19h00",
+      "prix": "18€",
+      "nbrIntoxications": 20,
+      "poilsPubiensMoyenParAssiette": 12,
+      "nbrRats": 28,
+      "nbrUrinesDiffParCacahuete": 6
+    },
+    {
+      "id": 4,
+      "name": "resto3",
+      "ouvreture": "8h00",
+      "fermeture": "19h00",
+      "prix": "18€",
+      "nbrIntoxications": 20,
+      "poilsPubiensMoyenParAssiette": 12,
+      "nbrRats": 28,
+      "nbrUrinesDiffParCacahuete": 6
+    }
+  ],
+  "toilettes": [
+    {
+      "id": 1,
+      "nbrEnfantsDévorés": 100,
+      "HS": false,
+      "tempsAttente": 45
+    },
+    {
+      "id": 2,
+      "nbrEnfantsDévorés": 0,
+      "HS": false,
+      "tempsAttente": 60
+    },
+    {
+      "id": 3,
+      "nbrEnfantsDévorés": 14,
+      "HS": false,
+      "tempsAttente": 12
+    },
+    {
+      "id": 4,
+      "nbrEnfantsDévorés": 122,
+      "HS": false,
+      "tempsAttente": 0
+    }
+  ],
+  "sortiesSecours": [
+    {
+      "id": 1,
+      "auxNormes": false
+    },
+    {
+      "id": 2,
+      "auxNormes": true
+    },
+    {
+      "id": 3,
+      "auxNormes": false
+    },
+    {
+      "id": 4,
+      "auxNormes": true
     }
   ]
 }
