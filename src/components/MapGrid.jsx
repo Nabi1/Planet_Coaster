@@ -145,8 +145,6 @@ function MapGrid(props) {
                 <TableCell id="I10"></TableCell>
                 <TableCell id="J10"></TableCell>  
               </TableRow>
-              
-           
         </TableBody>
       </Table>
     </Paper>
