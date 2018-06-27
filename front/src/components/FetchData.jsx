@@ -30,11 +30,9 @@ class fetchData extends Component {
   }
 
   render() {
-    const {data} = this.state;
     return (
       <div>
-        ok
-      </div>
+			</div>
     )
   }
 }

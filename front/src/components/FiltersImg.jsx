@@ -4,7 +4,9 @@ import './../App.css';
 class FiltersImg extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = {
+      value: []
+    }
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -19,6 +21,10 @@ class FiltersImg extends Component {
       alert('adventure')
     }
   }
+
+
+
+
   render() {
     return (
       <div>

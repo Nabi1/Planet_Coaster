@@ -3,6 +3,7 @@ import './App.css';
 import FiltersImg from './components/FiltersImg';
 import FiltersText from './components/FiltersText';
 import FetchData from './components/FetchData';
+import PopUp from './components/PopUp'
 
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
       <div className="App">
         <FiltersText />
         <FiltersImg />
+        <PopUp />
         <FetchData />
       </div>
     );
