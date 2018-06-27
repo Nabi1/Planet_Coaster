@@ -7,6 +7,7 @@ class fetchData extends Component {
     this.state = {
       data: [],
       error: null,
+      loaded: false,
     };
   }
 
@@ -19,6 +20,7 @@ class fetchData extends Component {
         (result) => {
           this.setState({
             data: result,
+            loaded: true,
           });
         },
         (error) => {
@@ -31,9 +33,14 @@ class fetchData extends Component {
 
   render() {
     const {data} = this.state;
+    console.log(data.games)
     return (
       <div>
-        ok
+        <ul>
+          {this.state.loaded && data.attractions.map(traveler => (
+          <li key={traveler.id}>{traveler.type}</li>
+          ))}
+        </ul> 
       </div>
     )
   }
