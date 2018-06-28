@@ -20,10 +20,8 @@ import { fetchDatas } from '../actions/fetchActions';
 import _ from 'lodash';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import NativeSelect from '@material-ui/core/NativeSelect';
 
 const styles = theme => ({
   card: {
@@ -57,12 +55,12 @@ class ShowResults extends React.Component {
     this.state = {
       expanded: false,
       loaded: false,
-      isAttractions: false,
-      isResto: true,
+      isAttractions: true,
+      isResto: false,
       isToilettes: false,
       witchOne: 0,
       goClick: false,
-      wichType: "attractions",
+      wichType: 'attractions',
     };
   }
 
@@ -71,21 +69,19 @@ class ShowResults extends React.Component {
   };
 
   switchType = i => {
-    const allAttractions = this.props.datas.attractions[i].name;
     this.setState({
       witchOne: i,
       goClick: true,
     });
   };
 
-  componentDidUpdate() {
-    if (this.state.goClick) {
-    }
-  }
+  handleChange = name => event => {
+    this.setState({ [name]: event.target.value });
+  };
 
   render() {
     const { classes, datas } = this.props;
-    const { isAttractions, isResto, isToilettes, witchOne, wichType } = this.state;
+    const { isAttractions, isResto, isToilettes, witchOne } = this.state;
     return (
       <div>
         <ul>
@@ -106,69 +102,71 @@ class ShowResults extends React.Component {
             ))}
         </ul>
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="age-helper">Type</InputLabel>
-          <Select
-            value={this.state.age}
-            onChange={this.handleChange}
-            input={<Input name="age" id="age-helper" />}
+          <InputLabel htmlFor="uncontrolled-native">Type</InputLabel>
+          <NativeSelect
+            defaultValue={1}
+            input={<Input name="autre" id="uncontrolled-native" />}
           >
-            <MenuItem value="">
-              <em>Choix</em>
-            </MenuItem>
-            <MenuItem
+            <option value="" />
+            <option
               onClick={() => {
                 this.setState({
-                  wichType: "attractions",
+                  isAttractions: true,
+                  isResto: false,
+                  isToilettes: false,
                 });
               }}
-              value={10}
+              value={1}
             >
               Attractions
-            </MenuItem>
-            <MenuItem
+            </option>
+            <option
               onClick={() => {
                 this.setState({
-                  wichType: "resto",
+                  isAttractions: false,
+                  isResto: true,
+                  isToilettes: false,
                 });
               }}
-              value={20}
+              value={2}
             >
               Restaurants
-            </MenuItem>
-            <MenuItem
+            </option>
+            <option
               onClick={() => {
                 this.setState({
-                  wichType: "toilettes",
+                  isAttractions: false,
+                  isResto: false,
+                  isToilettes: true,
                 });
               }}
-              value={30}
+              value={3}
             >
-              Toilettes
-            </MenuItem>
-          </Select>
-          <FormHelperText>Some important helper text</FormHelperText>
+              Toilettes{' '}
+            </option>
+          </NativeSelect>
         </FormControl>
         <Card className={classes.card}>
           {/* ATTRACTIONS */}
           {isAttractions && (
             <div>
               <CardHeader
-                titre={!_.isEmpty(datas) && datas[wichType][witchOne].name}
+                title={!_.isEmpty(datas) && datas.attractions[witchOne].name}
               />
               <CardMedia
                 className={classes.media}
-                image={!_.isEmpty(datas) && datas[wichType][witchOne].src}
+                image={!_.isEmpty(datas) && datas.attractions[witchOne].src}
                 title="Contemplative Reptile"
               />
               <CardContent style={{ textAlign: 'left' }}>
                 <Typography variant="title" component="p">
                   Morts:{' '}
-                  {!_.isEmpty(datas) && datas[wichType][witchOne].nbrMorts}
+                  {!_.isEmpty(datas) && datas.attractions[witchOne].nbrMorts}
                 </Typography>
                 <Typography variant="title" component="p">
                   Chaussures perdues:{' '}
                   {!_.isEmpty(datas) &&
-                    datas[wichType][witchOne].nbrChaussuresPerdues}
+                    datas.attractions[witchOne].nbrChaussuresPerdues}
                 </Typography>
                 <Typography variant="title" component="p">
                   Vomis:{' '}
@@ -186,8 +184,7 @@ class ShowResults extends React.Component {
           {isResto && (
             <div>
               <CardHeader
-                titre={!_.isEmpty(datas) && datas.resto[witchOne].name}
-                subheader={!_.isEmpty(datas) && datas.resto[witchOne].name}
+                title={!_.isEmpty(datas) && datas.resto[witchOne].name}
               />
               <CardMedia
                 className={classes.media}
@@ -195,7 +192,7 @@ class ShowResults extends React.Component {
                 title={!_.isEmpty(datas) && datas.resto[witchOne].name}
               />
               <CardContent style={{ textAlign: 'left' }}>
-                <Typography variant="title" variant="title" component="p">
+                <Typography variant="title" component="p">
                   Intoxications:{' '}
                   {!_.isEmpty(datas) && datas.resto[witchOne].nbrIntoxications}
                 </Typography>
@@ -219,10 +216,7 @@ class ShowResults extends React.Component {
           {isToilettes && (
             <div>
               <CardHeader
-                titre={!_.isEmpty(datas) && datas.attractions[witchOne].name}
-                subheader={
-                  !_.isEmpty(datas) && datas.attractions[witchOne].name
-                }
+                title={!_.isEmpty(datas) && datas.toilettes[witchOne].name}
               />
               <CardMedia
                 className={classes.media}
