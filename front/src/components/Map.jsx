@@ -29,7 +29,7 @@ class Map extends Component {
       <div className={classes.parentMap}>
         <img className={classes.map} src={map}/>
         {!_.isEmpty(datas) && datas.attractions.map((data) => (
-            <img key={data.id} src={data.srcLogo}/>
+            <img key={data.id} src={data.srcLogo} style={data.style}/>
         ))}
       </div>
     );

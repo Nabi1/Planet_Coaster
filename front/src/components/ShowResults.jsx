@@ -62,6 +62,7 @@ class ShowResults extends React.Component {
       goClick: false,
       wichType: 'attractions',
     };
+    this.props.fetchDatas();
   }
 
   handleExpandClick = () => {
@@ -270,7 +271,7 @@ class ShowResults extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state.datasReducer.datas);
+  console.log(state);
   return {
     datas: state.datasReducer.datas,
     loading: state.datasReducer.loading,
