@@ -36,7 +36,7 @@
       "nbrMorts": 20,
       "nbrVisManquantes": 4,
       "src":"https://i.ytimg.com/vi/Ctiipom0xQM/maxresdefault.jpg",
-      "srcLogo" : "../img/amour.svg"",
+      "srcLogo" : "../img/amour.svg",
       "style":{
         "position": "absolute",
         "top": "200px",
@@ -58,6 +58,14 @@
       "nbrMorts": 1,
       "nbrVisManquantes": 30,
       "src":"http://images.mentalfloss.com/sites/default/files/styles/insert_main_wide_image/public/pile.png"
+      "srcLogo" : "../img/amour.svg",
+      "style":{
+        "position": "absolute",
+        "top": "400px",
+        "left": "350px",
+        "width": "60px",
+        "height" : "60px"
+      },
     },
     {
       "id": 4,
@@ -72,6 +80,14 @@
       "nbrMorts": 1,
       "nbrVisManquantes": 40,
       "src":"https://img-fotki.yandex.ru/get/4812/46616872.79/0_81336_7e3bbe59_orig.jpg"
+      "srcLogo" : "../img/amour.svg",
+      "style":{
+        "position": "absolute",
+        "top": "450px",
+        "left": "600px",
+        "width": "60px",
+        "height" : "60px"
+      },
     },
     {
       "id": 5,
@@ -86,6 +102,14 @@
       "nbrMorts": 2753,
       "nbrVisManquantes": 3598,
       "src":"http://i2.wp.com/lightartacademy.com/blog/wp-content/uploads/2016/10/13483300_10154017015595589_4226658362639655074_o.jpg?fit=2048%2C1365"
+      "srcLogo" : "../img/amour.svg",
+      "style":{
+        "position": "absolute",
+        "top": "250px",
+        "left": "650px",
+        "width": "60px",
+        "height" : "60px"
+      },
     }
   ],
   "resto": [
