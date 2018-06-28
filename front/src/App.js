@@ -4,7 +4,7 @@ import FiltersImg from './components/FiltersImg';
 import FiltersText from './components/FiltersText';
 import FetchData from './components/FetchData';
 import ShowResults from './components/ShowResults';
-import MapGrid from './components/MapGrid';
+import Map from './components/Map';
 
 class App extends Component {
   render() {
@@ -20,6 +20,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Map />
       </div>
     );
   }
