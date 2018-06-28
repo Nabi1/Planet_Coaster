@@ -13,7 +13,7 @@
       "nbrChaussuresPerdues": 4000,
       "nbrMorts": 2000,
       "nbrVisManquantes": 0,
-      "src":"../img/attrac1.jpg"
+      "src":"https://cdn.images.express.co.uk/img/dynamic/galleries/x701/371746.jpg"
     },
     {
       "id": 2,
@@ -27,7 +27,7 @@
       "nbrChaussuresPerdues": 120,
       "nbrMorts": 20,
       "nbrVisManquantes": 4,
-      "src:"https://i.ytimg.com/vi/Ctiipom0xQM/maxresdefault.jpg"
+      "src":"https://i.ytimg.com/vi/Ctiipom0xQM/maxresdefault.jpg"
     },
     {
       "id": 3,
