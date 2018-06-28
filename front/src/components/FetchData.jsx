@@ -1,6 +1,7 @@
 // React
 import React, { Component } from 'react';
 // Components
+import ShowResults from './ShowResults';
 class fetchData extends Component {
   constructor(props) {
     super(props);
@@ -32,17 +33,17 @@ class fetchData extends Component {
   }
 
   render() {
-    const {data} = this.state;
-    console.log(data.games)
+    const { data } = this.state;
     return (
       <div>
         <ul>
-          {this.state.loaded && data.attractions.map(traveler => (
-          <li key={traveler.id}>{traveler.type}</li>
-          ))}
-        </ul> 
+          {this.state.loaded &&
+            data.attractions.map(traveler => (
+              <li key={traveler.id}>{traveler.type}</li>
+            ))}
+        </ul>
       </div>
-    )
+    );
   }
 }
 

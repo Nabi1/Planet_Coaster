@@ -3,6 +3,9 @@ import './App.css';
 import FiltersImg from './components/FiltersImg';
 import FiltersText from './components/FiltersText';
 import FetchData from './components/FetchData';
+import ShowResults from './components/ShowResults';
+
+
 
 
 class App extends Component {
@@ -12,6 +15,7 @@ class App extends Component {
         <FiltersText />
         <FiltersImg />
         <FetchData />
+        <ShowResults />
       </div>
     );
   }
