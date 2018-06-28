@@ -38,7 +38,6 @@ class fetchData extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     datas: state.datasReducer.datas,
     loading: state.datasReducer.loading,
