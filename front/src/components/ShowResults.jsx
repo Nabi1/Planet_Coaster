@@ -18,6 +18,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from '../../../../../../../.cache/typescript/2.9/node_modules/redux';
 import { fetchDatas } from '../actions/fetchActions';
 import _ from 'lodash';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 const styles = theme => ({
   card: {
@@ -51,9 +57,12 @@ class ShowResults extends React.Component {
     this.state = {
       expanded: false,
       loaded: false,
-      isAttractions: true,
-      isResto: false,
+      isAttractions: false,
+      isResto: true,
       isToilettes: false,
+      witchOne: 0,
+      goClick: false,
+      wichType: "attractions",
     };
   }
 
@@ -61,40 +70,114 @@ class ShowResults extends React.Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
+  switchType = i => {
+    const allAttractions = this.props.datas.attractions[i].name;
+    this.setState({
+      witchOne: i,
+      goClick: true,
+    });
+  };
+
+  componentDidUpdate() {
+    if (this.state.goClick) {
+    }
+  }
+
   render() {
     const { classes, datas } = this.props;
-    const { isAttractions, isResto, isToilettes } = this.state;
+    const { isAttractions, isResto, isToilettes, witchOne, wichType } = this.state;
     return (
       <div>
+        <ul>
+          {!_.isEmpty(datas) &&
+            datas.resto.map((item, i) => (
+              <li key={i}>
+                {item.name}
+                <span>
+                  <button
+                    onClick={() => {
+                      this.switchType(i);
+                    }}
+                  >
+                    Choix
+                  </button>
+                </span>
+              </li>
+            ))}
+        </ul>
+        <FormControl className={classes.formControl}>
+          <InputLabel htmlFor="age-helper">Type</InputLabel>
+          <Select
+            value={this.state.age}
+            onChange={this.handleChange}
+            input={<Input name="age" id="age-helper" />}
+          >
+            <MenuItem value="">
+              <em>Choix</em>
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                this.setState({
+                  wichType: "attractions",
+                });
+              }}
+              value={10}
+            >
+              Attractions
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                this.setState({
+                  wichType: "resto",
+                });
+              }}
+              value={20}
+            >
+              Restaurants
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                this.setState({
+                  wichType: "toilettes",
+                });
+              }}
+              value={30}
+            >
+              Toilettes
+            </MenuItem>
+          </Select>
+          <FormHelperText>Some important helper text</FormHelperText>
+        </FormControl>
         <Card className={classes.card}>
           {/* ATTRACTIONS */}
           {isAttractions && (
             <div>
               <CardHeader
-                titre={!_.isEmpty(datas) && datas.attractions[0].name}
+                titre={!_.isEmpty(datas) && datas[wichType][witchOne].name}
               />
               <CardMedia
                 className={classes.media}
-                image={!_.isEmpty(datas) && datas.attractions[0].src}
+                image={!_.isEmpty(datas) && datas[wichType][witchOne].src}
                 title="Contemplative Reptile"
               />
               <CardContent style={{ textAlign: 'left' }}>
-                <Typography component="p">
-                  Nbr de Morts:{' '}
-                  {!_.isEmpty(datas) && datas.attractions[0].nbrMorts}
+                <Typography variant="title" component="p">
+                  Morts:{' '}
+                  {!_.isEmpty(datas) && datas[wichType][witchOne].nbrMorts}
                 </Typography>
-                <Typography component="p">
-                  Nbr de chaussures perdues:{' '}
+                <Typography variant="title" component="p">
+                  Chaussures perdues:{' '}
                   {!_.isEmpty(datas) &&
-                    datas.attractions[0].nbrChaussuresPerdues}
+                    datas[wichType][witchOne].nbrChaussuresPerdues}
                 </Typography>
-                <Typography component="p">
-                  Nbr de vomis:{' '}
-                  {!_.isEmpty(datas) && datas.attractions[0].nbrVomis}
+                <Typography variant="title" component="p">
+                  Vomis:{' '}
+                  {!_.isEmpty(datas) && datas.attractions[witchOne].nbrVomis}
                 </Typography>
-                <Typography component="p">
-                  Nbr de vis manquantes:{' '}
-                  {!_.isEmpty(datas) && datas.attractions[0].nbrVisManquantes}
+                <Typography variant="title" component="p">
+                  Vis manquantes:{' '}
+                  {!_.isEmpty(datas) &&
+                    datas.attractions[witchOne].nbrVisManquantes}
                 </Typography>
               </CardContent>
             </div>
@@ -103,31 +186,31 @@ class ShowResults extends React.Component {
           {isResto && (
             <div>
               <CardHeader
-                titre={!_.isEmpty(datas) && datas.attractions[0].name}
-                subheader={!_.isEmpty(datas) && datas.attractions[0].name}
+                titre={!_.isEmpty(datas) && datas.resto[witchOne].name}
+                subheader={!_.isEmpty(datas) && datas.resto[witchOne].name}
               />
               <CardMedia
                 className={classes.media}
-                image="http://cf.broadsheet.ie/wp-content/uploads/2014/09/Screen-Shot-2014-09-09-at-01.56.35-e1410225924240.jpeg"
-                title="Contemplative Reptile"
+                image={!_.isEmpty(datas) && datas.resto[witchOne].src}
+                title={!_.isEmpty(datas) && datas.resto[witchOne].name}
               />
               <CardContent style={{ textAlign: 'left' }}>
-                <Typography component="p">
-                  Nbr de Intoxications:{' '}
-                  {!_.isEmpty(datas) && datas.resto[0].nbrIntoxications}
+                <Typography variant="title" variant="title" component="p">
+                  Intoxications:{' '}
+                  {!_.isEmpty(datas) && datas.resto[witchOne].nbrIntoxications}
                 </Typography>
-                <Typography component="p">
-                  Nbr de poils pubiens / assiette:{' '}
+                <Typography variant="title" component="p">
+                  Poils pubiens / assiette:{' '}
                   {!_.isEmpty(datas) &&
-                    datas.resto[0].poilsPubiensMoyenParAssiette}
+                    datas.resto[witchOne].poilsPubiensMoyenParAssiette}
                 </Typography>
-                <Typography component="p">
-                  Nbr d'urines/cacahuete:{' '}
+                <Typography variant="title" component="p">
+                  Urines/cacahuete:{' '}
                   {!_.isEmpty(datas) &&
-                    datas.resto[0].nbrUrinesDiffParCacahuete}
+                    datas.resto[witchOne].nbrUrinesDiffParCacahuete}
                 </Typography>
-                <Typography component="p">
-                  Nbr de rats: {!_.isEmpty(datas) && datas.resto[0].nbrRats}
+                <Typography variant="title" component="p">
+                  Rats: {!_.isEmpty(datas) && datas.resto[witchOne].nbrRats}
                 </Typography>
               </CardContent>
             </div>
@@ -136,26 +219,29 @@ class ShowResults extends React.Component {
           {isToilettes && (
             <div>
               <CardHeader
-                titre={!_.isEmpty(datas) && datas.attractions[0].name}
-                subheader={!_.isEmpty(datas) && datas.attractions[0].name}
+                titre={!_.isEmpty(datas) && datas.attractions[witchOne].name}
+                subheader={
+                  !_.isEmpty(datas) && datas.attractions[witchOne].name
+                }
               />
               <CardMedia
                 className={classes.media}
-                image={!_.isEmpty(datas) && datas.toilettes[0].src}
+                image={!_.isEmpty(datas) && datas.toilettes[witchOne].src}
                 title="Contemplative Reptile"
               />
               <CardContent style={{ textAlign: 'left' }}>
-                <Typography component="p">
+                <Typography variant="title" component="p">
                   Temps d'attente:
-                  {!_.isEmpty(datas) && datas.toilettes[0].tempsAttente}
+                  {!_.isEmpty(datas) && datas.toilettes[witchOne].tempsAttente}
                 </Typography>
-                <Typography component="p">
-                  Nbr d'enfants dévorés
-                  {!_.isEmpty(datas) && datas.toilettes[0].nbrEnfantsDévorés}
+                <Typography variant="title" component="p">
+                  Enfants dévorés
+                  {!_.isEmpty(datas) &&
+                    datas.toilettes[witchOne].nbrEnfantsDévorés}
                 </Typography>
-                <Typography component="p">
-                  Nbr d'urines / cacahuete:
-                  {!_.isEmpty(datas) && datas.toilettes[0].HS}
+                <Typography variant="title" component="p">
+                  Urines / cacahuete:
+                  {!_.isEmpty(datas) && datas.toilettes[witchOne].HS}
                 </Typography>
               </CardContent>
             </div>
