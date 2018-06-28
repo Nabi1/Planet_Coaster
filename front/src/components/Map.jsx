@@ -7,7 +7,7 @@ import _ from 'lodash';
 const styles = theme => ({
   parentMap: {
     width:'100%',
-    overflow: 'overlay'
+    overflow: 'auto'
   },
   formControl: {
     margin: theme.spacing.unit,
