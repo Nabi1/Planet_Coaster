@@ -72,7 +72,7 @@ class FiltersText extends React.Component {
             J'en ai marre des attractions
           </InputLabel>
           <NativeSelect
-            defaultValue={1}
+            defaultValue={3}
             input={<Input name="autre" id="uncontrolled-native" />}
           >
             <option value="" />
