@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './../App.css';
+import { connect } from 'react-redux';
+import { fetchProductsSuccess } from "../actions/fetchActions";
+import { bindActionCreators } from "redux";
 
 class FiltersImg extends Component {
   constructor(props) {
@@ -32,7 +35,7 @@ class FiltersImg extends Component {
   handleClick(e){
     if(e.target.name === 'family'){
       this.state.loaded && this.state.data.attractions.map(traveler => (
-      (traveler.type === 'Horreur') ? this.setState({attractions:traveler}) : console.log(this.state.attractions) ))
+      (traveler.type === 'Horreur') ? this.setState({attractions:traveler}) : '' ))
     }
     else if(e.target.name === 'children'){
       alert('children')
@@ -45,7 +48,7 @@ class FiltersImg extends Component {
     return (
       <div>
 
-        <span title="Pour toute la famille"><img name='family' className='filterAge' src='https://image.flaticon.com/icons/svg/374/374971.svg' onClick={this.handleClick} alt='family '/></span>
+        <span title="Pour toute la famille"><img name='family' className='filterAge' src="https://image.flaticon.com/icons/svg/374/374971.svg" onClick={this.handleClick} alt='family '/></span>
         <span title="Pour les enfants"><img name='children' className='filterAge' src='https://image.flaticon.com/icons/svg/344/344754.svg' onClick={this.handleClick} alt='children' /></span>
         <span title="Pour les plus aventuriers"><img name='adventure' className='filterAge' src='https://image.flaticon.com/icons/svg/188/188500.svg' onClick={this.handleClick} alt='adventure' /></span>
         {
@@ -64,4 +67,14 @@ class FiltersImg extends Component {
   }
 }
 
-export default FiltersImg;
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({fetchProductsSuccess}, dispatch);
+}
+
+const mapStateToProps = state => {
+	return {
+    data : state.datasReducer.datas.attractions
+  	}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(FiltersImg);
