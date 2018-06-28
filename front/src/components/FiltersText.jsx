@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 
 const styles = theme => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
+    marginTop: '40px'
   },
   formControl: {
     margin: theme.spacing.unit,
@@ -37,10 +36,14 @@ class FiltersText extends React.Component {
 
     return (
       <div className={classes.root}>
-
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="uncontrolled-native">L'ambiance de mon attraction</InputLabel>
-          <NativeSelect defaultValue={2} input={<Input name="typeAttraction" id="uncontrolled-native" />}>
+          <InputLabel htmlFor="uncontrolled-native">
+            L'ambiance de mon attraction
+          </InputLabel>
+          <NativeSelect
+            defaultValue={2}
+            input={<Input name="typeAttraction" id="uncontrolled-native" />}
+          >
             <option value="" />
             <option value={1}>Dirty Dancing</option>
             <option value={2}>American Horror Show</option>
@@ -49,18 +52,30 @@ class FiltersText extends React.Component {
         </FormControl>
 
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="uncontrolled-native">Le temps d'attente de mon attraction</InputLabel>
-          <NativeSelect defaultValue={1} input={<Input name="tempsAttente" id="uncontrolled-native" />}>
+          <InputLabel htmlFor="uncontrolled-native">
+            Le temps d'attente de mon attraction
+          </InputLabel>
+          <NativeSelect
+            defaultValue={1}
+            input={<Input name="tempsAttente" id="uncontrolled-native" />}
+          >
             <option value="" />
             <option value={1}>Je suis pressé(-de 5mins)</option>
-            <option value={2}>Je veux bien patienter mais pas trop(-de 15mins)</option>
+            <option value={2}>
+              Je veux bien patienter mais pas trop(-de 15mins)
+            </option>
             <option value={3}>J'ai le temps</option>
           </NativeSelect>
         </FormControl>
 
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="uncontrolled-native">J'en ai marre des attractions</InputLabel>
-          <NativeSelect defaultValue={1} input={<Input name="autre" id="uncontrolled-native" />}>
+          <InputLabel htmlFor="uncontrolled-native">
+            J'en ai marre des attractions
+          </InputLabel>
+          <NativeSelect
+            defaultValue={3}
+            input={<Input name="autre" id="uncontrolled-native" />}
+          >
             <option value="" />
             <option value={1}>A boire ! J'ai fort soif !</option>
             <option value={2}>J'ai aussi très faim</option>
@@ -69,7 +84,6 @@ class FiltersText extends React.Component {
             <option value={5}>Où est ma voiture au fait ?</option>
           </NativeSelect>
         </FormControl>
-
       </div>
     );
   }

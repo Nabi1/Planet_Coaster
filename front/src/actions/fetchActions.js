@@ -1,7 +1,9 @@
 export function fetchDatas() {
-    return dispatch => {
+  console.log("fetchDatas")
+
+    return (dispatch) => {
         dispatch(fetchProductsBegin());
-        return fetch("https://rawgit.com/Nabi1/Planet_Coaster/createJson/front/src/data.json")
+        return fetch("https://rawgit.com/Nabi1/Planet_Coaster/dev/front/src/data.json")
             .then(handleErrors)
             .then(res => res.json())
             .then(json => {
@@ -9,6 +11,7 @@ export function fetchDatas() {
             return json;
             })
             .catch(error => dispatch(fetchProductsError(error)));
+            console.log()
     };
 }
 
