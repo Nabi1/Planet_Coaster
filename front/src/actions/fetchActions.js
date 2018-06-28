@@ -1,7 +1,7 @@
 export function fetchDatas() {
     return dispatch => {
         dispatch(fetchProductsBegin());
-        return fetch("https://rawgit.com/Nabi1/Planet_Coaster/createJson/front/src/data.json")
+        return fetch("https://raw.githubusercontent.com/Nabi1/Planet_Coaster/dev/front/src/data.json")
             .then(handleErrors)
             .then(res => res.json())
             .then(json => {
