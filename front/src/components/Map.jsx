@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import map from '../img/index.png'
 import _ from 'lodash';
+import Tooltip from '@material-ui/core/Tooltip';
+import compose from 'recompose/compose';
+import { bindActionCreators } from 'redux';
+import { fetchDatas } from '../actions/fetchActions';
 
 const styles = theme => ({
   parentMap: {
@@ -20,16 +24,27 @@ const styles = theme => ({
   }
 });
 
+
+
 class Map extends Component {
-
-
+  
+  switchType = (item) => {
+    this.setState({
+      witchOne: item,
+    });
+  };
+  
   render() {
-    const { classes, datas } = this.props;
+    const { classes, datas, witchOne} = this.props;
     return (
       <div className={classes.parentMap}>
         <img className={classes.map} src={map}/>
         {!_.isEmpty(datas) && datas.attractions.map((data) => (
-            <img key={data.id} src={data.srcLogo} style={data.style}/>
+            <Tooltip title={data.name} placement="top">
+            <img  onClick={() => {
+                      this.switchType(data.id);
+                    }} key={data.id} src={data.srcLogo} style={data.style} alt={data.name}/>
+            </Tooltip>
         ))}
       </div>
     );
@@ -41,8 +56,18 @@ function mapStateToProps(state) {
       datas: state.datasReducer.datas,
       loading: state.datasReducer.loading,
       error: state.datasReducer.error,
+      witchOne: state.datasReducer.witchOne,
     };
   }
+ 
+  function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ fetchDatas }, dispatch);
+  }
 
-
-export default withStyles(styles)(connect(mapStateToProps)(Map));
+export default compose(
+  withStyles(styles),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
+)(Map);

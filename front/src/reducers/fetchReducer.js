@@ -1,13 +1,15 @@
 import {
     FETCH_PRODUCTS_BEGIN,
     FETCH_PRODUCTS_SUCCESS,
-    FETCH_PRODUCTS_FAILURE
+    FETCH_PRODUCTS_FAILURE,
+    SHOW_DATA_BOX
 } from '../actions/fetchActions';
 
 const initialState = {
     datas: {},
     loading: false,
-    error: null
+    error: null,
+    witchOne: 0,
 };
 
 export default function datasReducer(state = initialState, action) {
@@ -33,6 +35,12 @@ export default function datasReducer(state = initialState, action) {
                 error: action.payload.error,
                 datas: []
             };
+
+        case SHOW_DATA_BOX:
+            return {
+                ...state,
+                witchOne :  action.payload.witchOne,   
+            }
 
         default:
             return state;
