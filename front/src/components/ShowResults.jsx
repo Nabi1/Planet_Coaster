@@ -12,7 +12,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import compose from 'recompose/compose';
 import { connect } from 'react-redux';
@@ -52,9 +51,9 @@ class ShowResults extends React.Component {
     this.state = {
       expanded: false,
       loaded: false,
-      isAttractions: false,
+      isAttractions: true,
       isResto: false,
-      isToilettes: true,
+      isToilettes: false,
     };
   }
 

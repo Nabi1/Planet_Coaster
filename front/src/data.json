@@ -4,108 +4,99 @@
     {
       "id": 1,
       "type": "Horreur",
-      "name": "attraction1",
-      "ouvreture": "8h00",
+      "name": "La promenade des enfants disparus",
+      "ouverture": "8h00",
       "fermeture": "19h00",
-      "ageMin": "8",
-      "attente": "36min",
+      "ageMin": 0,
+      "attente": "00:00",
       "nbrVomis": 18,
-      "nbrChaussuresPerdues": 345,
-      "nbrMorts": 300,
-      "nbrVisManquantes": 15,
-      "src": "../img/attract1.jpg"
+      "nbrChaussuresPerdues": 4000,
+      "nbrMorts": 2000,
+      "nbrVisManquantes": 0,
+      "src":"../img/attrac1.jpg"
     },
     {
       "id": 2,
       "type": "Amour",
-      "name": "attraction1",
-      "ouvreture": "8h00",
+      "name": "Syndrome de Stockholm",
+      "ouverture": "8h00",
       "fermeture": "19h00",
-      "ageMin": "8",
-      "attente": "36min",
-      "nbrVomis": 18,
-      "nbrChaussuresPerdues": 345,
-      "nbrMorts": 300,
-      "nbrVisManquantes": 15,
-      "src": "../img/attract2.jpg"
-
+      "ageMin": 12,
+      "attente": "2ans",
+      "nbrVomis": 60,
+      "nbrChaussuresPerdues": 120,
+      "nbrMorts": 20,
+      "nbrVisManquantes": 4
     },
     {
       "id": 3,
       "type": "Suicidaire",
-
-      "name": "attraction1",
-      "ouvreture": "8h00",
+      "name": "13 reasons...",
+      "ouverture": "8h00",
       "fermeture": "19h00",
-      "ageMin": "8",
+      "ageMin": 15,
       "attente": "36min",
-      "nbrVomis": 18,
-      "nbrChaussuresPerdues": 345,
-      "nbrMorts": 300,
-      "nbrVisManquantes": 15,
-      "src": "../img/attract3.jpg"
-
+      "nbrVomis": 20,
+      "nbrChaussuresPerdues": 9,
+      "nbrMorts": 1,
+      "nbrVisManquantes": 30
     },
     {
       "id": 4,
-      "type": "Horreur",
-      "name": "attraction1",
-      "ouvreture": "8h00",
+      "type": "Suicidaire",
+      "name": "Fast and Furious",
+      "ouverture": "8h00",
       "fermeture": "19h00",
       "ageMin": "8",
       "attente": "36min",
-      "nbrVomis": 18,
-      "nbrChaussuresPerdues": 345,
-      "nbrMorts": 300,
-      "nbrVisManquantes": 15,
-      "src": "../img/attract4.jpg"
-
+      "nbrVomis": 300,
+      "nbrChaussuresPerdues": 100,
+      "nbrMorts": 1,
+      "nbrVisManquantes": 40
     },
     {
       "id": 5,
-      "name": "attraction1",
+      "name": "Les tours jumelles",
       "type": "Horreur",
-      "ouvreture": "8h00",
-      "fermeture": "19h00",
+      "ouverture": "9h00",
+      "fermeture": "11h00",
       "ageMin": "8",
       "attente": "36min",
-      "nbrVomis": 18,
-      "nbrChaussuresPerdues": 345,
-      "nbrMorts": 300,
-      "nbrVisManquantes": 15,
-      "src": "../img/attract5.jpg"
-
+      "nbrVomis": 156,
+      "nbrChaussuresPerdues": 5827,
+      "nbrMorts": 2753,
+      "nbrVisManquantes": 3598
     }
   ],
   "resto": [
     {
       "id": 1,
-      "name": "resto",
-      "ouvreture": "8h00",
-      "fermeture": "19h00",
-      "prix": "18€",
+      "name": "Chez Emile et Louis",
+      "ouverture": "11h00",
+      "fermeture": "15h00",
+      "prix": 2,
       "nbrIntoxications": 20,
       "poilsPubiensMoyenParAssiette": 12,
-      "nbrRats": 28,
+      "nbrRats": 0,
       "nbrUrinesDiffParCacahuete": 6
     },
     {
       "id": 2,
-      "name": "resto2",
-      "ouvreture": "8h00",
-      "fermeture": "19h00",
-      "prix": "18€",
+      "name": "Chez tonton Marc",
+      "ouverture": "11h00",
+      "fermeture": "15h00",
+      "prix": 180,
       "nbrIntoxications": 20,
       "poilsPubiensMoyenParAssiette": 12,
-      "nbrRats": 28,
+      "nbrRats": 1,
       "nbrUrinesDiffParCacahuete": 6
     },
     {
       "id": 3,
       "name": "resto3",
-      "ouvreture": "8h00",
+      "ouverture": "8h00",
       "fermeture": "19h00",
-      "prix": "18€",
+      "prix": 20,
       "nbrIntoxications": 20,
       "poilsPubiensMoyenParAssiette": 12,
       "nbrRats": 28,
@@ -114,9 +105,9 @@
     {
       "id": 4,
       "name": "resto3",
-      "ouvreture": "8h00",
+      "ouverture": "8h00",
       "fermeture": "19h00",
-      "prix": "18€",
+      "prix": 45,
       "nbrIntoxications": 20,
       "poilsPubiensMoyenParAssiette": 12,
       "nbrRats": 28,
@@ -127,10 +118,8 @@
     {
       "id": 1,
       "nbrEnfantsDévorés": 100,
-      "HS": false,
-      "tempsAttente": 45,
-      "src":"https://www.boreally.org/photo/friche/gign-centre-entrainement/toilette-abandonne-hygiene-douteuse.jpg"
-
+      "HS": true,
+      "tempsAttente": "4ans"
     },
     {
       "id": 2,
