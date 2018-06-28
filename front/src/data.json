@@ -20,9 +20,9 @@
       "widthLogo" : 50,
       "heightLogo" : 50,
       "style":{
-        'position': 'relative',
-        'top': 150,
-        'left': '300',
+        "position": "relative",
+        "top": 150,
+        "left": "300"
       }
     },
     {
