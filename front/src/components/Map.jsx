@@ -8,7 +8,7 @@ const styles = theme => ({
   parentMap: {
     width:'100%',
     overflow: 'auto',
-    position: relative, 
+    position: 'relative', 
   },
   formControl: {
     margin: theme.spacing.unit,
