@@ -22,13 +22,6 @@ class App extends Component {
           <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
-          <img src="../img/plan.png" usemap="#image-map">
-
-          <map name="image-map">
-              <area target="" alt="title" title="title" href="link" coords="751,235" shape="rect"/>
-          </map>
-    
-          {/* <MapGrid /> */}
       </div>
     );
   }
