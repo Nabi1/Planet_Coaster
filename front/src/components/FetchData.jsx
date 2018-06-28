@@ -51,6 +51,6 @@ function mapStateToProps(state){
     error: state.datasReducer.error
   })
 };
-  
+
 
 export default connect(mapStateToProps)(fetchData);
