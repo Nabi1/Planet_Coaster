@@ -12,7 +12,8 @@
       "nbrVomis": 18,
       "nbrChaussuresPerdues": 345,
       "nbrMorts": 300,
-      "nbrVisManquantes": 15
+      "nbrVisManquantes": 15,
+      "src": "../img/attract1.jpg"
     },
     {
       "id": 2,
@@ -25,7 +26,9 @@
       "nbrVomis": 18,
       "nbrChaussuresPerdues": 345,
       "nbrMorts": 300,
-      "nbrVisManquantes": 15
+      "nbrVisManquantes": 15,
+      "src": "../img/attract2.jpg"
+
     },
     {
       "id": 3,
@@ -39,7 +42,9 @@
       "nbrVomis": 18,
       "nbrChaussuresPerdues": 345,
       "nbrMorts": 300,
-      "nbrVisManquantes": 15
+      "nbrVisManquantes": 15,
+      "src": "../img/attract3.jpg"
+
     },
     {
       "id": 4,
@@ -52,7 +57,9 @@
       "nbrVomis": 18,
       "nbrChaussuresPerdues": 345,
       "nbrMorts": 300,
-      "nbrVisManquantes": 15
+      "nbrVisManquantes": 15,
+      "src": "../img/attract4.jpg"
+
     },
     {
       "id": 5,
@@ -65,7 +72,9 @@
       "nbrVomis": 18,
       "nbrChaussuresPerdues": 345,
       "nbrMorts": 300,
-      "nbrVisManquantes": 15
+      "nbrVisManquantes": 15,
+      "src": "../img/attract5.jpg"
+
     }
   ],
   "resto": [
@@ -119,7 +128,9 @@
       "id": 1,
       "nbrEnfantsDévorés": 100,
       "HS": false,
-      "tempsAttente": 45
+      "tempsAttente": 45,
+      "src":"https://www.boreally.org/photo/friche/gign-centre-entrainement/toilette-abandonne-hygiene-douteuse.jpg"
+
     },
     {
       "id": 2,

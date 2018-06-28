@@ -8,14 +8,17 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import compose from 'recompose/compose';
+import { connect } from 'react-redux';
+import { bindActionCreators } from '../../../../../../../.cache/typescript/2.9/node_modules/redux';
+import { fetchDatas } from '../actions/fetchActions';
+import _ from 'lodash';
 
 const styles = theme => ({
   card: {
@@ -48,8 +51,10 @@ class ShowResults extends React.Component {
     super(props);
     this.state = {
       expanded: false,
-      data: [],
       loaded: false,
+      isAttractions: false,
+      isResto: false,
+      isToilettes: true,
     };
   }
 
@@ -57,65 +62,109 @@ class ShowResults extends React.Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
-  componentDidMount() {
-    fetch(
-      'https://rawgit.com/Nabi1/Planet_Coaster/createJson/front/src/data.json'
-    )
-      .then(res => res.json())
-      .then(
-        result => {
-          this.setState({
-            data: result,
-            loaded: true,
-          });
-        },
-        error => {
-          this.setState({
-            error,
-          });
-        }
-      );
-  }
-
   render() {
-    const { classes } = this.props;
-    const { data } = this.state;
-    console.log(data);
+    const { classes, datas } = this.props;
+    const { isAttractions, isResto, isToilettes } = this.state;
     return (
       <div>
         <Card className={classes.card}>
-          <CardHeader
-            avatar={
-              <Avatar aria-label="Recipe" className={classes.avatar}>
-              </Avatar>
-            }
-            action={
-              <IconButton>
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title="Shrimp and Chorizo Paella"
-            subheader="ok"
-          />
-          <CardMedia
-            className={classes.media}
-            image="http://cf.broadsheet.ie/wp-content/uploads/2014/09/Screen-Shot-2014-09-09-at-01.56.35-e1410225924240.jpeg"
-            title="Contemplative Reptile"
-          />
-          <CardContent style={{ textAlign: 'left' }}>
-            <Typography component="p">Nbr de Morts: 18</Typography>
-            <Typography component="p">
-              Nbr de chaussures perdues: 18
-            </Typography>
-            <Typography component="p">Nbr de vomis: 18</Typography>
-            <Typography component="p">Nbr de vis manquantes: 345</Typography>
-          </CardContent>
+          {/* ATTRACTIONS */}
+          {isAttractions && (
+            <div>
+              <CardHeader
+                titre={!_.isEmpty(datas) && datas.attractions[0].name}
+              />
+              <CardMedia
+                className={classes.media}
+                image={!_.isEmpty(datas) && datas.attractions[0].src}
+                title="Contemplative Reptile"
+              />
+              <CardContent style={{ textAlign: 'left' }}>
+                <Typography component="p">
+                  Nbr de Morts:{' '}
+                  {!_.isEmpty(datas) && datas.attractions[0].nbrMorts}
+                </Typography>
+                <Typography component="p">
+                  Nbr de chaussures perdues:{' '}
+                  {!_.isEmpty(datas) &&
+                    datas.attractions[0].nbrChaussuresPerdues}
+                </Typography>
+                <Typography component="p">
+                  Nbr de vomis:{' '}
+                  {!_.isEmpty(datas) && datas.attractions[0].nbrVomis}
+                </Typography>
+                <Typography component="p">
+                  Nbr de vis manquantes:{' '}
+                  {!_.isEmpty(datas) && datas.attractions[0].nbrVisManquantes}
+                </Typography>
+              </CardContent>
+            </div>
+          )}
+          {/* RESTAURANTS */}
+          {isResto && (
+            <div>
+              <CardHeader
+                titre={!_.isEmpty(datas) && datas.attractions[0].name}
+                subheader={!_.isEmpty(datas) && datas.attractions[0].name}
+              />
+              <CardMedia
+                className={classes.media}
+                image="http://cf.broadsheet.ie/wp-content/uploads/2014/09/Screen-Shot-2014-09-09-at-01.56.35-e1410225924240.jpeg"
+                title="Contemplative Reptile"
+              />
+              <CardContent style={{ textAlign: 'left' }}>
+                <Typography component="p">
+                  Nbr de Intoxications:{' '}
+                  {!_.isEmpty(datas) && datas.resto[0].nbrIntoxications}
+                </Typography>
+                <Typography component="p">
+                  Nbr de poils pubiens / assiette:{' '}
+                  {!_.isEmpty(datas) &&
+                    datas.resto[0].poilsPubiensMoyenParAssiette}
+                </Typography>
+                <Typography component="p">
+                  Nbr d'urines/cacahuete:{' '}
+                  {!_.isEmpty(datas) &&
+                    datas.resto[0].nbrUrinesDiffParCacahuete}
+                </Typography>
+                <Typography component="p">
+                  Nbr de rats: {!_.isEmpty(datas) && datas.resto[0].nbrRats}
+                </Typography>
+              </CardContent>
+            </div>
+          )}
+          {/* TOILETTES */}
+          {isToilettes && (
+            <div>
+              <CardHeader
+                titre={!_.isEmpty(datas) && datas.attractions[0].name}
+                subheader={!_.isEmpty(datas) && datas.attractions[0].name}
+              />
+              <CardMedia
+                className={classes.media}
+                image={!_.isEmpty(datas) && datas.toilettes[0].src}
+                title="Contemplative Reptile"
+              />
+              <CardContent style={{ textAlign: 'left' }}>
+                <Typography component="p">
+                  Temps d'attente:
+                  {!_.isEmpty(datas) && datas.toilettes[0].tempsAttente}
+                </Typography>
+                <Typography component="p">
+                  Nbr d'enfants dévorés
+                  {!_.isEmpty(datas) && datas.toilettes[0].nbrEnfantsDévorés}
+                </Typography>
+                <Typography component="p">
+                  Nbr d'urines / cacahuete:
+                  {!_.isEmpty(datas) && datas.toilettes[0].HS}
+                </Typography>
+              </CardContent>
+            </div>
+          )}
+
           <CardActions className={classes.actions} disableActionSpacing>
             <IconButton aria-label="Add to favorites">
               <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="Share">
-              <ShareIcon />
             </IconButton>
             <IconButton
               className={classnames(classes.expand, {
@@ -141,8 +190,27 @@ class ShowResults extends React.Component {
   }
 }
 
+function mapStateToProps(state) {
+  console.log(state.datasReducer.datas);
+  return {
+    datas: state.datasReducer.datas,
+    loading: state.datasReducer.loading,
+    error: state.datasReducer.error,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchDatas }, dispatch);
+}
+
 ShowResults.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ShowResults);
+export default compose(
+  withStyles(styles),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
+)(ShowResults);

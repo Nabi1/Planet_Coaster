@@ -1,50 +1,49 @@
 // React
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchDatas } from '../actions/fetchActions';
+import _ from 'lodash';
+
 // Components
-import ShowResults from './ShowResults';
 class fetchData extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
-      error: null,
       loaded: false,
     };
   }
 
   componentDidMount() {
-    fetch(
-      'https://rawgit.com/Nabi1/Planet_Coaster/createJson/front/src/data.json'
-    )
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            data: result,
-            loaded: true,
-          });
-        },
-        (error) => {
-          this.setState({
-            error,
-          });
-        }
-      );
+    this.props.dispatch(fetchDatas());
   }
 
   render() {
-    const { data } = this.state;
+    const { error, loading, datas } = this.props;
+    if (error) {
+      return <div>Error! {error.message}</div>;
+    }
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
     return (
       <div>
         <ul>
-          {this.state.loaded &&
-            data.attractions.map(traveler => (
-              <li key={traveler.id}>{traveler.type}</li>
-            ))}
+          {!_.isEmpty(datas) &&
+            datas.attractions.map(data => <li key={data.id}>{data.type}</li>)}
         </ul>
       </div>
     );
   }
 }
 
-export default fetchData;
+function mapStateToProps(state) {
+  console.log(state);
+  return {
+    datas: state.datasReducer.datas,
+    loading: state.datasReducer.loading,
+    error: state.datasReducer.error,
+  };
+}
+
+export default connect(mapStateToProps)(fetchData);
