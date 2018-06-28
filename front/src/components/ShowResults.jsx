@@ -270,7 +270,6 @@ class ShowResults extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state.datasReducer.datas);
   return {
     datas: state.datasReducer.datas,
     loading: state.datasReducer.loading,
