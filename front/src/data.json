@@ -102,7 +102,7 @@
       "nbrMorts": 2753,
       "nbrVisManquantes": 3598,
       "src":"http://i2.wp.com/lightartacademy.com/blog/wp-content/uploads/2016/10/13483300_10154017015595589_4226658362639655074_o.jpg?fit=2048%2C1365"
-      "srcLogo" : "../img/amour.svg",
+      "srcLogo": "../img/amour.svg",
       "style":{
         "position": "absolute",
         "top": "250px",
