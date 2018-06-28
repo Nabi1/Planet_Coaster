@@ -164,8 +164,8 @@
          "src":"https://cbspittsburgh.files.wordpress.com/2012/10/stove-fire.jpg?w=1024",
          "style":{
             "position":"absolute",
-            "top":"750px",
-            "left":"550px",
+            "top":"450px",
+            "left":"1200px",
             "width":"60px",
             "height":"60px"
          }
@@ -180,8 +180,15 @@
          "poilsPubiensMoyenParAssiette":12,
          "nbrRats":28,
          "nbrUrinesDiffParCacahuete":6,
-         "src":"https://i2-prod.mirror.co.uk/incoming/article6292517.ece/ALTERNATES/s1200/Rat-infested-kitchen.jpg"
+         "src":"https://i2-prod.mirror.co.uk/incoming/article6292517.ece/ALTERNATES/s1200/Rat-infested-kitchen.jpg",
       }
+       "style":{
+            "position":"absolute",
+            "top":"750px",
+            "left":"550px",
+            "width":"60px",
+            "height":"60px"
+         }
    ],
    "toilettes":[
       {
@@ -189,50 +196,107 @@
          "nbrEnfantsDévorés":100,
          "HS":true,
          "tempsAttente":"4ans",
-         "src":"https://www.boreally.org/photo/friche/gign-centre-entrainement/toilette-abandonne-hygiene-douteuse.jpg"
+         "src":"https://www.boreally.org/photo/friche/gign-centre-entrainement/toilette-abandonne-hygiene-douteuse.jpg",
+         "style":{
+            "position":"absolute",
+            "top":"850px",
+            "left":"1200px",
+            "width":"60px",
+            "height":"60px"
+         }
       },
       {
          "id":2,
          "nbrEnfantsDévorés":0,
          "HS":false,
          "tempsAttente":60,
-         "src":"http://norat-services.wifeo.com/images/medium_rat_rattenbio_klo_g.jpg"
+         "src":"http://norat-services.wifeo.com/images/medium_rat_rattenbio_klo_g.jpg",
+         "style":{
+            "position":"absolute",
+            "top":"600px",
+            "left":"1400px",
+            "width":"60px",
+            "height":"60px"
+         }
+         
       },
       {
          "id":3,
          "nbrEnfantsDévorés":14,
          "HS":false,
          "tempsAttente":12,
-         "src":"https://farm8.static.flickr.com/7588/26782486450_a41ab25190_b.jpg"
+         "src":"https://farm8.static.flickr.com/7588/26782486450_a41ab25190_b.jpg",
+         "style":{
+            "position":"absolute",
+            "top":"700px",
+            "left":"500px",
+            "width":"60px",
+            "height":"60px"
+         }
       },
       {
          "id":4,
          "nbrEnfantsDévorés":122,
          "HS":false,
          "tempsAttente":0,
-         "src":"https://c1.staticflickr.com/8/7330/9337430858_40f594fef4_b.jpg"
+         "src":"https://c1.staticflickr.com/8/7330/9337430858_40f594fef4_b.jpg",
+         "style":{
+            "position":"absolute",
+            "top":"100px",
+            "left":"1400px",
+            "width":"60px",
+            "height":"60px"
+         }
       }
    ],
    "sortiesSecours":[
       {
          "id":1,
          "auxNormes":false,
-         "src":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwihjabuqvbbAhUD0xQKHVFfAoAQjRx6BAgBEAU&url=http%3A%2F%2Fwww.perspective-images.com%2Fno-exit%2F&psig=AOvVaw0guGMRGNCKXnItjkoJCFeH&ust=1530274487456727"
+         "src":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwihjabuqvbbAhUD0xQKHVFfAoAQjRx6BAgBEAU&url=http%3A%2F%2Fwww.perspective-images.com%2Fno-exit%2F&psig=AOvVaw0guGMRGNCKXnItjkoJCFeH&ust=1530274487456727",
+         "style":{
+            "position":"absolute",
+            "top":"1450px",
+            "left":"1100px",
+            "width":"60px",
+            "height":"60px"
+         }
       },
       {
          "id":2,
          "auxNormes":true,
-         "src":"https://thumbs.dreamstime.com/b/abandoned-doors-ruined-building-entrance-house-47451057.jpg"
+         "src":"https://thumbs.dreamstime.com/b/abandoned-doors-ruined-building-entrance-house-47451057.jpg",
+          "style":{
+            "position":"absolute",
+            "top":"200px",
+            "left":"1450px",
+            "width":"60px",
+            "height":"60px"
+         }
       },
       {
          "id":3,
          "auxNormes":false,
-         "src":"https://media1.popsugar-assets.com/files/thumbor/5LjbveqbRSk9jYN8seE_FwQ5g38/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2016/06/30/869/n/1922441/b42765b458e8eca9_DNT.jpg"
+         "src":"https://media1.popsugar-assets.com/files/thumbor/5LjbveqbRSk9jYN8seE_FwQ5g38/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2016/06/30/869/n/1922441/b42765b458e8eca9_DNT.jpg",
+            "style":{
+            "position":"absolute",
+            "top":"400px",
+            "left":"800px",
+            "width":"60px",
+            "height":"60px"
+         }
       },
       {
          "id":4,
          "auxNormes":true,
-         "src":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjagZOvq_bbAhWMaxQKHYNnC5sQjRx6BAgBEAU&url=https%3A%2F%2Fwww.shutterstock.com%2Fimage-photo%2Fdoor-sign-dont-open-dead-inside-601546898&psig=AOvVaw2_n8zONTYZjo2w55RDKueu&ust=1530274601669046"
+         "src":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjagZOvq_bbAhWMaxQKHYNnC5sQjRx6BAgBEAU&url=https%3A%2F%2Fwww.shutterstock.com%2Fimage-photo%2Fdoor-sign-dont-open-dead-inside-601546898&psig=AOvVaw2_n8zONTYZjo2w55RDKueu&ust=1530274601669046",
+         "style":{
+            "position":"absolute",
+            "top":"1100px",
+            "left":"800px",
+            "width":"60px",
+            "height":"60px"
+         }
       }
    ]
 }
