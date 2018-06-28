@@ -13,7 +13,12 @@
       "nbrChaussuresPerdues": 4000,
       "nbrMorts": 2000,
       "nbrVisManquantes": 0,
-      "src":"https://cdn.images.express.co.uk/img/dynamic/galleries/x701/371746.jpg"
+      "src":"https://cdn.images.express.co.uk/img/dynamic/galleries/x701/371746.jpg",
+      "srcLogo" : "https://image.flaticon.com/icons/svg/11/11296.svg",
+      "coordX" : "150",
+      "coordY" : "300",
+      "widthLogo" : 50,
+      "heightLogo" : 50
     },
     {
       "id": 2,
@@ -27,7 +32,12 @@
       "nbrChaussuresPerdues": 120,
       "nbrMorts": 20,
       "nbrVisManquantes": 4,
-      "src":"https://i.ytimg.com/vi/Ctiipom0xQM/maxresdefault.jpg"
+      "src":"https://i.ytimg.com/vi/Ctiipom0xQM/maxresdefault.jpg",
+      "srcLogo" : "https://image.flaticon.com/icons/svg/914/914611.svg",
+      "coordX" : "200",
+      "coordY" : "300",
+      "widthLogo" : 50,
+      "heightLogo" : 50
     },
     {
       "id": 3,
