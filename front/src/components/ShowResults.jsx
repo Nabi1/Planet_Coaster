@@ -15,7 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import compose from 'recompose/compose';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '../../../../../../../.cache/typescript/2.9/node_modules/redux';
+import { bindActionCreators } from 'redux';
 import { fetchDatas } from '../actions/fetchActions';
 import _ from 'lodash';
 import Input from '@material-ui/core/Input';
