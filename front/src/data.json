@@ -57,7 +57,7 @@
       "nbrChaussuresPerdues": 9,
       "nbrMorts": 1,
       "nbrVisManquantes": 30,
-      "src":"http://images.mentalfloss.com/sites/default/files/styles/insert_main_wide_image/public/pile.png"
+      "src":"http://images.mentalfloss.com/sites/default/files/styles/insert_main_wide_image/public/pile.png",
       "srcLogo" : "../img/amour.svg",
       "style":{
         "position": "absolute",
@@ -79,7 +79,7 @@
       "nbrChaussuresPerdues": 100,
       "nbrMorts": 1,
       "nbrVisManquantes": 40,
-      "src":"https://img-fotki.yandex.ru/get/4812/46616872.79/0_81336_7e3bbe59_orig.jpg"
+      "src":"https://img-fotki.yandex.ru/get/4812/46616872.79/0_81336_7e3bbe59_orig.jpg",
       "srcLogo" : "../img/amour.svg",
       "style":{
         "position": "absolute",
@@ -101,7 +101,7 @@
       "nbrChaussuresPerdues": 5827,
       "nbrMorts": 2753,
       "nbrVisManquantes": 3598,
-      "src":"http://i2.wp.com/lightartacademy.com/blog/wp-content/uploads/2016/10/13483300_10154017015595589_4226658362639655074_o.jpg?fit=2048%2C1365"
+      "src":"http://i2.wp.com/lightartacademy.com/blog/wp-content/uploads/2016/10/13483300_10154017015595589_4226658362639655074_o.jpg?fit=2048%2C1365",
       "srcLogo": "../img/amour.svg",
       "style":{
         "position": "absolute",
@@ -123,7 +123,14 @@
       "poilsPubiensMoyenParAssiette": 12,
       "nbrRats": 0,
       "nbrUrinesDiffParCacahuete": 6,
-      "src":"http://2.bp.blogspot.com/-QOr31nYDt24/UH0WPLcg79I/AAAAAAAABlc/3IfwsOYxn5M/s1600/Island+of+Dreams+-+Kitchen+Area.jpg"
+      "src":"http://2.bp.blogspot.com/-QOr31nYDt24/UH0WPLcg79I/AAAAAAAABlc/3IfwsOYxn5M/s1600/Island+of+Dreams+-+Kitchen+Area.jpg",
+      "style":{
+        "position": "absolute",
+        "top": "225",
+        "left": "750px",
+        "width": "60px",
+        "height" : "60px"
+      },
     },
     {
       "id": 2,
@@ -135,7 +142,14 @@
       "poilsPubiensMoyenParAssiette": 12,
       "nbrRats": 1,
       "nbrUrinesDiffParCacahuete": 6,
-      "src":"http://i.dailymail.co.uk/i/pix/2013/11/29/article-2515526-19B6B29100000578-257_964x635.jpg"
+      "src":"http://i.dailymail.co.uk/i/pix/2013/11/29/article-2515526-19B6B29100000578-257_964x635.jpg",
+      "style":{
+        "position": "absolute",
+        "top": "600px",
+        "left": "750px",
+        "width": "60px",
+        "height" : "60px"
+      },
     },
     {
       "id": 3,
@@ -147,7 +161,14 @@
       "poilsPubiensMoyenParAssiette": 12,
       "nbrRats": 28,
       "nbrUrinesDiffParCacahuete": 6,
-      "src":"https://cbspittsburgh.files.wordpress.com/2012/10/stove-fire.jpg?w=1024"
+      "src":"https://cbspittsburgh.files.wordpress.com/2012/10/stove-fire.jpg?w=1024",
+      style":{
+        "position": "absolute",
+        "top": "750px",
+        "left": "550px",
+        "width": "60px",
+        "height" : "60px"
+      },
     },
     {
       "id": 4,
