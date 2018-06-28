@@ -12,7 +12,8 @@
       "nbrVomis": 18,
       "nbrChaussuresPerdues": 4000,
       "nbrMorts": 2000,
-      "nbrVisManquantes": 0
+      "nbrVisManquantes": 0,
+      "src":"../img/attrac1.jpg"
     },
     {
       "id": 2,
