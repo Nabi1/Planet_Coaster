@@ -1,0 +1,40 @@
+import {
+    FETCH_PRODUCTS_BEGIN,
+    FETCH_PRODUCTS_SUCCESS,
+    FETCH_PRODUCTS_FAILURE
+} from '../actions/fetchActions';
+
+const initialState = {
+    datas: {},
+    loading: false,
+    error: null
+};
+
+export default function datasReducer(state = initialState, action) {
+    switch(action.type) {
+        case FETCH_PRODUCTS_BEGIN:
+            return {
+                ...state,
+                loading: true,
+                error: null
+            };
+
+        case FETCH_PRODUCTS_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                datas: action.payload.datas
+            };
+
+        case FETCH_PRODUCTS_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload.error,
+                datas: []
+            };
+
+        default:
+            return state;
+    }
+}
