@@ -1,5 +1,4 @@
 export function fetchDatas() {
-  console.log("fetchDatas")
 
     return (dispatch) => {
         dispatch(fetchProductsBegin());

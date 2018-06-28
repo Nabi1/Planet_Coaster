@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
-import map from '../img/index.png'
+import map from '../img/index.png';
 import _ from 'lodash';
 import Tooltip from '@material-ui/core/Tooltip';
 import compose from 'recompose/compose';
@@ -10,8 +10,9 @@ import { fetchDatas } from '../actions/fetchActions';
 
 const styles = theme => ({
   parentMap: {
-    width:'100%',
-    overflow: 'auto'
+    width: '100%',
+    overflow: 'auto',
+    position: 'relative',
   },
   formControl: {
     margin: theme.spacing.unit,
@@ -20,8 +21,7 @@ const styles = theme => ({
   selectEmpty: {
     marginTop: theme.spacing.unit * 2,
   },
-  map: {
-  }
+  map: {},
 });
 
 
