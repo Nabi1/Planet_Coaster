@@ -99,7 +99,7 @@
     },
     {
       "id": 3,
-      "name": "resto3",
+      "name": "Sisi c'est gratuit",
       "ouverture": "8h00",
       "fermeture": "19h00",
       "prix": 20,
@@ -111,7 +111,7 @@
     },
     {
       "id": 4,
-      "name": "resto3",
+      "name": "Hum ca a l'air bon",
       "ouverture": "8h00",
       "fermeture": "19h00",
       "prix": 45,
