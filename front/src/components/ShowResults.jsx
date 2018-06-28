@@ -78,7 +78,6 @@ class ShowResults extends React.Component {
       goClick: true,
     });
   };
-  
 
   handleChange = name => event => {
     this.setState({ [name]: event.target.value });
@@ -153,8 +152,10 @@ class ShowResults extends React.Component {
           </NativeSelect>
         </FormControl>
 
-        {(this.state.isAttractions === true) ? (this.state.isResto === true) ? (this.state.isToilettes === true) ? <FiltersChoiceToilettes /> : <FiltersChoiceResto /> : <FiltersChoiceAttractions /> : ''}
-
+        {this.state.isAttractions && <FiltersChoiceAttractions /> }
+        {this.state.isResto && <FiltersChoiceResto /> }
+        {this.state.isToilettes && <FiltersChoiceToilettes />}
+        
         <Card className={classes.card}>
 
           {/* ATTRACTIONS */}
