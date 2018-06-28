@@ -75,6 +75,7 @@ class ShowResults extends React.Component {
       goClick: true,
     });
   };
+  
 
   handleChange = name => event => {
     this.setState({ [name]: event.target.value });
