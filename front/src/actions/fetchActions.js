@@ -1,5 +1,4 @@
 export function fetchDatas() {
-  console.log("fetchDatas")
 
     return (dispatch) => {
         dispatch(fetchProductsBegin());
@@ -11,7 +10,6 @@ export function fetchDatas() {
             return json;
             })
             .catch(error => dispatch(fetchProductsError(error)));
-            console.log()
     };
 }
 

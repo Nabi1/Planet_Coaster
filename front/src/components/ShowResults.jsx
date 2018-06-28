@@ -22,6 +22,9 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import FiltersChoiceAttractions from './FiltersChoiceAttractions';
+import FiltersChoiceResto  from './FiltersChoiceResto';
+import FiltersChoiceToilettes from './FiltersChoiceToilettes';
 
 const styles = theme => ({
   card: {
@@ -102,6 +105,7 @@ class ShowResults extends React.Component {
               </li>
             ))}
         </ul>
+
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="uncontrolled-native">Type</InputLabel>
           <NativeSelect
@@ -147,7 +151,11 @@ class ShowResults extends React.Component {
             </option>
           </NativeSelect>
         </FormControl>
+
+        {(this.state.isAttractions === true) ? (this.state.isResto === true) ? (this.state.isToilettes === true) ? <FiltersChoiceToilettes /> : <FiltersChoiceResto /> : <FiltersChoiceAttractions /> : ''}
+
         <Card className={classes.card}>
+
           {/* ATTRACTIONS */}
           {isAttractions && (
             <div>
@@ -265,13 +273,14 @@ class ShowResults extends React.Component {
             </CardContent>
           </Collapse>
         </Card>
+        {    console.log(this.state.choice)
+}
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     datas: state.datasReducer.datas,
     loading: state.datasReducer.loading,

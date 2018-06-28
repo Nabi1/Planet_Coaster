@@ -18,7 +18,12 @@
       "coordX" : "150",
       "coordY" : "300",
       "widthLogo" : 50,
-      "heightLogo" : 50
+      "heightLogo" : 50,
+      "style":{
+        "position": "relative",
+        "top": 150,
+        "left": "300"
+      }
     },
     {
       "id": 2,
