@@ -13,6 +13,7 @@ class AllComponents extends Component {
   render() {
     return (
       <div>
+        <h1>BIENVENUE A DESPAIRWORLD</h1>
         <Grid container spacing={24}>
           <Grid item xs={12} md={2}>
             <FiltersText />

@@ -144,6 +144,7 @@ class ShowResults extends React.Component {
               }}
               value={3}
             >
+            
               Toilettes{' '}
             </option>
           </NativeSelect>
