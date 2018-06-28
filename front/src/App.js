@@ -13,11 +13,7 @@ class App extends Component {
       <div className="App">
       <h1>BIENVENUE A DESPAIRWORLD</h1>
         <AllComponents/>
-        {/* <FiltersText />
-        <FiltersImg />
-        <ShowResults />
-        <FetchData /> */}
-        {/* <MapGrid /> */}
+
       </div>
     );
   }

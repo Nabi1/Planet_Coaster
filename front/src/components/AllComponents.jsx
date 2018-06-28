@@ -6,24 +6,27 @@ import FiltersImg from './FiltersImg';
 import FiltersText from './FiltersText';
 
 class AllComponents extends Component {
-    render() {
-        return (
-            <div>
-                    <Grid container spacing={24}>
-                        <Grid item xs={12} md={2}>
-                            <FiltersText/>
-                            <ShowResults/>
-                            <FiltersImg/>
-                        </Grid>
-                        
-                        <Grid item xs={12} md={10}>
-                           <MapGrid/>
-                        </Grid>
-                    </Grid> 
-            </div>
-    
-        )
-    }
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <div>
+        <Grid container spacing={24}>
+          <Grid item xs={12} md={2}>
+            <FiltersText />
+            <ShowResults />
+            <FiltersImg />
+          </Grid>
+
+          <Grid item xs={12} md={10}>
+            <MapGrid />
+          </Grid>
+        </Grid>
+      </div>
+    );
+  }
 }
 
 export default AllComponents;
