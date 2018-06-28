@@ -1,192 +1,238 @@
 {
-  "title": "attractions",
-  "attractions": [
-    {
-      "id": 1,
-      "type": "Horreur",
-      "name": "La promenade des enfants disparus",
-      "ouverture": "8h00",
-      "fermeture": "19h00",
-      "ageMin": 0,
-      "attente": "00:00",
-      "nbrVomis": 18,
-      "nbrChaussuresPerdues": 4000,
-      "nbrMorts": 2000,
-      "nbrVisManquantes": 0,
-      "src":"https://cdn.images.express.co.uk/img/dynamic/galleries/x701/371746.jpg",
-      "srcLogo" : "https://image.flaticon.com/icons/svg/11/11296.svg",
-      "coordX" : "150",
-      "coordY" : "300",
-      "widthLogo" : 50,
-      "heightLogo" : 50,
-      "style":{
-        "position": "relative",
-        "top": 150,
-        "left": "300"
+   "title":"attractions",
+   "attractions":[
+      {
+         "id":1,
+         "type":"Horreur",
+         "name":"La promenade des enfants disparus",
+         "ouverture":"8h00",
+         "fermeture":"19h00",
+         "ageMin":0,
+         "attente":"00:00",
+         "nbrVomis":18,
+         "nbrChaussuresPerdues":4000,
+         "nbrMorts":2000,
+         "nbrVisManquantes":0,
+         "src":"https://cdn.images.express.co.uk/img/dynamic/galleries/x701/371746.jpg",
+         "srcLogo":"../img/amour.svg",
+         "style":{
+            "position":"absolute",
+            "top":"400px",
+            "left":"120px",
+            "width":"60px",
+            "height":"60px"
+         }
+      },
+      {
+         "id":2,
+         "type":"Amour",
+         "name":"Syndrome de Stockholm",
+         "ouverture":"8h00",
+         "fermeture":"19h00",
+         "ageMin":12,
+         "attente":"2ans",
+         "nbrVomis":60,
+         "nbrChaussuresPerdues":120,
+         "nbrMorts":20,
+         "nbrVisManquantes":4,
+         "src":"https://i.ytimg.com/vi/Ctiipom0xQM/maxresdefault.jpg",
+         "srcLogo":"../img/amour.svg",
+         "style":{
+            "position":"absolute",
+            "top":"200px",
+            "left":"350px",
+            "width":"60px",
+            "height":"60px"
+         }
+      },
+      {
+         "id":3,
+         "type":"Suicidaire",
+         "name":"13 reasons...",
+         "ouverture":"8h00",
+         "fermeture":"19h00",
+         "ageMin":15,
+         "attente":"36min",
+         "nbrVomis":20,
+         "nbrChaussuresPerdues":9,
+         "nbrMorts":1,
+         "nbrVisManquantes":30,
+         "src":"http://images.mentalfloss.com/sites/default/files/styles/insert_main_wide_image/public/pile.png",
+         "srcLogo":"../img/amour.svg",
+         "style":{
+            "position":"absolute",
+            "top":"400px",
+            "left":"350px",
+            "width":"60px",
+            "height":"60px"
+         }
+      },
+      {
+         "id":4,
+         "type":"Suicidaire",
+         "name":"Fast and Furious",
+         "ouverture":"8h00",
+         "fermeture":"19h00",
+         "ageMin":"8",
+         "attente":"36min",
+         "nbrVomis":300,
+         "nbrChaussuresPerdues":100,
+         "nbrMorts":1,
+         "nbrVisManquantes":40,
+         "src":"https://img-fotki.yandex.ru/get/4812/46616872.79/0_81336_7e3bbe59_orig.jpg",
+         "srcLogo":"../img/amour.svg",
+         "style":{
+            "position":"absolute",
+            "top":"450px",
+            "left":"600px",
+            "width":"60px",
+            "height":"60px"
+         }
+      },
+      {
+         "id":5,
+         "name":"Les tours jumelles",
+         "type":"Horreur",
+         "ouverture":"9h00",
+         "fermeture":"11h00",
+         "ageMin":"8",
+         "attente":"36min",
+         "nbrVomis":156,
+         "nbrChaussuresPerdues":5827,
+         "nbrMorts":2753,
+         "nbrVisManquantes":3598,
+         "src":"http://i2.wp.com/lightartacademy.com/blog/wp-content/uploads/2016/10/13483300_10154017015595589_4226658362639655074_o.jpg?fit=2048%2C1365",
+         "srcLogo":"../img/amour.svg",
+         "style":{
+            "position":"absolute",
+            "top":"250px",
+            "left":"650px",
+            "width":"60px",
+            "height":"60px"
+         }
       }
-    },
-    {
-      "id": 2,
-      "type": "Amour",
-      "name": "Syndrome de Stockholm",
-      "ouverture": "8h00",
-      "fermeture": "19h00",
-      "ageMin": 12,
-      "attente": "2ans",
-      "nbrVomis": 60,
-      "nbrChaussuresPerdues": 120,
-      "nbrMorts": 20,
-      "nbrVisManquantes": 4,
-      "src":"https://i.ytimg.com/vi/Ctiipom0xQM/maxresdefault.jpg",
-      "srcLogo" : "https://image.flaticon.com/icons/svg/914/914611.svg",
-      "coordX" : "200",
-      "coordY" : "300",
-      "widthLogo" : 50,
-      "heightLogo" : 50
-    },
-    {
-      "id": 3,
-      "type": "Suicidaire",
-      "name": "13 reasons...",
-      "ouverture": "8h00",
-      "fermeture": "19h00",
-      "ageMin": 15,
-      "attente": "36min",
-      "nbrVomis": 20,
-      "nbrChaussuresPerdues": 9,
-      "nbrMorts": 1,
-      "nbrVisManquantes": 30,
-      "src":"http://images.mentalfloss.com/sites/default/files/styles/insert_main_wide_image/public/pile.png"
-    },
-    {
-      "id": 4,
-      "type": "Suicidaire",
-      "name": "Fast and Furious",
-      "ouverture": "8h00",
-      "fermeture": "19h00",
-      "ageMin": "8",
-      "attente": "36min",
-      "nbrVomis": 300,
-      "nbrChaussuresPerdues": 100,
-      "nbrMorts": 1,
-      "nbrVisManquantes": 40,
-      "src":"https://img-fotki.yandex.ru/get/4812/46616872.79/0_81336_7e3bbe59_orig.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Les tours jumelles",
-      "type": "Horreur",
-      "ouverture": "9h00",
-      "fermeture": "11h00",
-      "ageMin": "8",
-      "attente": "36min",
-      "nbrVomis": 156,
-      "nbrChaussuresPerdues": 5827,
-      "nbrMorts": 2753,
-      "nbrVisManquantes": 3598,
-      "src":"http://i2.wp.com/lightartacademy.com/blog/wp-content/uploads/2016/10/13483300_10154017015595589_4226658362639655074_o.jpg?fit=2048%2C1365"
-    }
-  ],
-  "resto": [
-    {
-      "id": 1,
-      "name": "Chez Emile et Louis",
-      "ouverture": "11h00",
-      "fermeture": "15h00",
-      "prix": 2,
-      "nbrIntoxications": 20,
-      "poilsPubiensMoyenParAssiette": 12,
-      "nbrRats": 0,
-      "nbrUrinesDiffParCacahuete": 6,
-      "src":"http://2.bp.blogspot.com/-QOr31nYDt24/UH0WPLcg79I/AAAAAAAABlc/3IfwsOYxn5M/s1600/Island+of+Dreams+-+Kitchen+Area.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Chez tonton Marc",
-      "ouverture": "11h00",
-      "fermeture": "15h00",
-      "prix": 180,
-      "nbrIntoxications": 20,
-      "poilsPubiensMoyenParAssiette": 12,
-      "nbrRats": 1,
-      "nbrUrinesDiffParCacahuete": 6,
-      "src":"http://i.dailymail.co.uk/i/pix/2013/11/29/article-2515526-19B6B29100000578-257_964x635.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Sisi c'est gratuit",
-      "ouverture": "8h00",
-      "fermeture": "19h00",
-      "prix": 20,
-      "nbrIntoxications": 20,
-      "poilsPubiensMoyenParAssiette": 12,
-      "nbrRats": 28,
-      "nbrUrinesDiffParCacahuete": 6,
-      "src":"https://cbspittsburgh.files.wordpress.com/2012/10/stove-fire.jpg?w=1024"
-    },
-    {
-      "id": 4,
-      "name": "Hum ca a l'air bon",
-      "ouverture": "8h00",
-      "fermeture": "19h00",
-      "prix": 45,
-      "nbrIntoxications": 20,
-      "poilsPubiensMoyenParAssiette": 12,
-      "nbrRats": 28,
-      "nbrUrinesDiffParCacahuete": 6,
-      "src":"https://i2-prod.mirror.co.uk/incoming/article6292517.ece/ALTERNATES/s1200/Rat-infested-kitchen.jpg"
-    }
-  ],
-  "toilettes": [
-    {
-      "id": 1,
-      "nbrEnfantsDévorés": 100,
-      "HS": true,
-      "tempsAttente": "4ans",
-      "src":"https://www.boreally.org/photo/friche/gign-centre-entrainement/toilette-abandonne-hygiene-douteuse.jpg"
-    },
-    {
-      "id": 2,
-      "nbrEnfantsDévorés": 0,
-      "HS": false,
-      "tempsAttente": 60,
-      "src":"http://norat-services.wifeo.com/images/medium_rat_rattenbio_klo_g.jpg"
-    },
-    {
-      "id": 3,
-      "nbrEnfantsDévorés": 14,
-      "HS": false,
-      "tempsAttente": 12,
-      "src":"https://farm8.static.flickr.com/7588/26782486450_a41ab25190_b.jpg"
-    },
-    {
-      "id": 4,
-      "nbrEnfantsDévorés": 122,
-      "HS": false,
-      "tempsAttente": 0,
-      "src":"https://c1.staticflickr.com/8/7330/9337430858_40f594fef4_b.jpg"
-    }
-  ],
-  "sortiesSecours": [
-    {
-      "id": 1,
-      "auxNormes": false,
-      "src":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwihjabuqvbbAhUD0xQKHVFfAoAQjRx6BAgBEAU&url=http%3A%2F%2Fwww.perspective-images.com%2Fno-exit%2F&psig=AOvVaw0guGMRGNCKXnItjkoJCFeH&ust=1530274487456727"
-    },
-    {
-      "id": 2,
-      "auxNormes": true,
-      "src":"https://thumbs.dreamstime.com/b/abandoned-doors-ruined-building-entrance-house-47451057.jpg"
-    },
-    {
-      "id": 3,
-      "auxNormes": false,
-      "src":"https://media1.popsugar-assets.com/files/thumbor/5LjbveqbRSk9jYN8seE_FwQ5g38/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2016/06/30/869/n/1922441/b42765b458e8eca9_DNT.jpg"
-    },
-    {
-      "id": 4,
-      "auxNormes": true,
-      "src":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjagZOvq_bbAhWMaxQKHYNnC5sQjRx6BAgBEAU&url=https%3A%2F%2Fwww.shutterstock.com%2Fimage-photo%2Fdoor-sign-dont-open-dead-inside-601546898&psig=AOvVaw2_n8zONTYZjo2w55RDKueu&ust=1530274601669046"
-    }
-  ]
+   ],
+   "resto":[
+      {
+         "id":1,
+         "name":"Chez Emile et Louis",
+         "ouverture":"11h00",
+         "fermeture":"15h00",
+         "prix":2,
+         "nbrIntoxications":20,
+         "poilsPubiensMoyenParAssiette":12,
+         "nbrRats":0,
+         "nbrUrinesDiffParCacahuete":6,
+         "src":"http://2.bp.blogspot.com/-QOr31nYDt24/UH0WPLcg79I/AAAAAAAABlc/3IfwsOYxn5M/s1600/Island+of+Dreams+-+Kitchen+Area.jpg",
+         "style":{
+            "position":"absolute",
+            "top":"225",
+            "left":"750px",
+            "width":"60px",
+            "height":"60px"
+         }
+      },
+      {
+         "id":2,
+         "name":"Chez tonton Marc",
+         "ouverture":"11h00",
+         "fermeture":"15h00",
+         "prix":180,
+         "nbrIntoxications":20,
+         "poilsPubiensMoyenParAssiette":12,
+         "nbrRats":1,
+         "nbrUrinesDiffParCacahuete":6,
+         "src":"http://i.dailymail.co.uk/i/pix/2013/11/29/article-2515526-19B6B29100000578-257_964x635.jpg",
+         "style":{
+            "position":"absolute",
+            "top":"600px",
+            "left":"750px",
+            "width":"60px",
+            "height":"60px"
+         }
+      },
+      {
+         "id":3,
+         "name":"Sisi c'est gratuit",
+         "ouverture":"8h00",
+         "fermeture":"19h00",
+         "prix":20,
+         "nbrIntoxications":20,
+         "poilsPubiensMoyenParAssiette":12,
+         "nbrRats":28,
+         "nbrUrinesDiffParCacahuete":6,
+         "src":"https://cbspittsburgh.files.wordpress.com/2012/10/stove-fire.jpg?w=1024",
+         "style":{
+            "position":"absolute",
+            "top":"750px",
+            "left":"550px",
+            "width":"60px",
+            "height":"60px"
+         }
+      },
+      {
+         "id":4,
+         "name":"Hum ca a l'air bon",
+         "ouverture":"8h00",
+         "fermeture":"19h00",
+         "prix":45,
+         "nbrIntoxications":20,
+         "poilsPubiensMoyenParAssiette":12,
+         "nbrRats":28,
+         "nbrUrinesDiffParCacahuete":6,
+         "src":"https://i2-prod.mirror.co.uk/incoming/article6292517.ece/ALTERNATES/s1200/Rat-infested-kitchen.jpg"
+      }
+   ],
+   "toilettes":[
+      {
+         "id":1,
+         "nbrEnfantsDévorés":100,
+         "HS":true,
+         "tempsAttente":"4ans",
+         "src":"https://www.boreally.org/photo/friche/gign-centre-entrainement/toilette-abandonne-hygiene-douteuse.jpg"
+      },
+      {
+         "id":2,
+         "nbrEnfantsDévorés":0,
+         "HS":false,
+         "tempsAttente":60,
+         "src":"http://norat-services.wifeo.com/images/medium_rat_rattenbio_klo_g.jpg"
+      },
+      {
+         "id":3,
+         "nbrEnfantsDévorés":14,
+         "HS":false,
+         "tempsAttente":12,
+         "src":"https://farm8.static.flickr.com/7588/26782486450_a41ab25190_b.jpg"
+      },
+      {
+         "id":4,
+         "nbrEnfantsDévorés":122,
+         "HS":false,
+         "tempsAttente":0,
+         "src":"https://c1.staticflickr.com/8/7330/9337430858_40f594fef4_b.jpg"
+      }
+   ],
+   "sortiesSecours":[
+      {
+         "id":1,
+         "auxNormes":false,
+         "src":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwihjabuqvbbAhUD0xQKHVFfAoAQjRx6BAgBEAU&url=http%3A%2F%2Fwww.perspective-images.com%2Fno-exit%2F&psig=AOvVaw0guGMRGNCKXnItjkoJCFeH&ust=1530274487456727"
+      },
+      {
+         "id":2,
+         "auxNormes":true,
+         "src":"https://thumbs.dreamstime.com/b/abandoned-doors-ruined-building-entrance-house-47451057.jpg"
+      },
+      {
+         "id":3,
+         "auxNormes":false,
+         "src":"https://media1.popsugar-assets.com/files/thumbor/5LjbveqbRSk9jYN8seE_FwQ5g38/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2016/06/30/869/n/1922441/b42765b458e8eca9_DNT.jpg"
+      },
+      {
+         "id":4,
+         "auxNormes":true,
+         "src":"https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjagZOvq_bbAhWMaxQKHYNnC5sQjRx6BAgBEAU&url=https%3A%2F%2Fwww.shutterstock.com%2Fimage-photo%2Fdoor-sign-dont-open-dead-inside-601546898&psig=AOvVaw2_n8zONTYZjo2w55RDKueu&ust=1530274601669046"
+      }
+   ]
 }
