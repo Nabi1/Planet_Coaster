@@ -11,7 +11,6 @@ export function fetchDatas() {
             return json;
             })
             .catch(error => dispatch(fetchProductsError(error)));
-            console.log()
     };
 }
 
