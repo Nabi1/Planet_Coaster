@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+
+body, .MuiTypography-headline-209, .MuiTypography-title-210, .MuiTypography-title-194{
+  font-family: 'Playfair Display', serif !important;
+}
+.MuiTypography-headline-193{
+  font-family: 'Abril Fatface' !important;
+}
+
 .App {
   text-align: center;
 }
@@ -28,11 +39,11 @@
 
 .mdc-checkbox{
   text-align: left;
-  margin:0.5em 0 0.5em 0.5em;
+  margin:1em 0 1em 1.2em;
 }
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-

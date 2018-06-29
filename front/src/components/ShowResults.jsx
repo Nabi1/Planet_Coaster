@@ -31,10 +31,17 @@ import { Link } from 'react-router-dom';
 const styles = theme => ({
   card: {
     maxWidth: 400,
+    opacity: '0.9',
+    backgroundPosition: 'right',
+    border: '5px dotted #17FBD2',
+    marginLeft:'1em',
+    marginTop:'1em'
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '56.25%',
+    borderRadius:'1em',
+    margin:'1em' // 16:9
   },
   actions: {
     display: 'flex',
@@ -52,18 +59,6 @@ const styles = theme => ({
   avatar: {
     backgroundColor: red[500],
   },
-  resultBox: {
-    padding : 40,
-    listStyle : "none",
-    textAlign: "justify",
-  },
-  formControl: {
-    paddingBottom: "50px"
-  },
-  all: {
-    marginTop: "100px",
-    marginLeft: "25px"
-  },
 });
 
 const Accueil = props => <Link to="/" {...props} />;
@@ -77,23 +72,12 @@ class ShowResults extends React.Component {
       isAttractions: true,
       isResto: false,
       isToilettes: false,
-      isOnMap:false,
       witchOne: 0,
       goClick: false,
       wichType: 'attractions',
     };
     this.props.fetchDatas();
   }
-
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.whichOne !== this.state.witchOne) {
-      this.setState({
-        witchOne:nextProps.whichOne,
-        isOnMap:false,
-      });
-
-    }
-  } 
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -112,16 +96,16 @@ class ShowResults extends React.Component {
 
   render() {
     const { classes, datas } = this.props;
-    const { isAttractions, isResto, isToilettes, witchOne, isOnMap } = this.state;
+    const { isAttractions, isResto, isToilettes, witchOne } = this.state;
     return (
       <div>
-        <ul className={classes.resultBox}>
+        <ul>
           {!_.isEmpty(datas) &&
             datas.resto.map((item, i) => (
               <li key={i}>
                 {item.name}
                 <span>
-                  <button className={classes.fourResults}
+                  <button
                     onClick={() => {
                       this.switchType(i);
                     }}
@@ -146,7 +130,6 @@ class ShowResults extends React.Component {
                   isAttractions: true,
                   isResto: false,
                   isToilettes: false,
-                  isOnMap:false
                 });
               }}
               value={1}
@@ -159,7 +142,6 @@ class ShowResults extends React.Component {
                   isAttractions: false,
                   isResto: true,
                   isToilettes: false,
-                  isOnMap:false
                 });
               }}
               value={2}
@@ -172,7 +154,6 @@ class ShowResults extends React.Component {
                   isAttractions: false,
                   isResto: false,
                   isToilettes: true,
-                  isOnMap:false
                 });
               }}
               value={3}
@@ -185,8 +166,7 @@ class ShowResults extends React.Component {
         {this.state.isAttractions && <FiltersChoiceAttractions /> }
         {this.state.isResto && <FiltersChoiceResto /> }
         {this.state.isToilettes && <FiltersChoiceToilettes />}
-        
-        <div className={classes.all}>
+
         <Card className={classes.card}>
 
           {/* ATTRACTIONS */}
@@ -282,34 +262,6 @@ class ShowResults extends React.Component {
               </CardContent>
             </div>
           )}
-          {/* ID on MAP */}
-          {isOnMap && (
-            <div>
-              <CardHeader
-                title={!_.isEmpty(datas) && datas.toilettes[witchOne].name}
-              />
-              <CardMedia
-                className={classes.media}
-                image={!_.isEmpty(datas) && datas.toilettes[witchOne].src}
-                title="Contemplative Reptile"
-              />
-              <CardContent style={{ textAlign: 'left' }}>
-                <Typography variant="title" component="p">
-                  Temps d'attente:
-                  {!_.isEmpty(datas) && datas.toilettes[witchOne].tempsAttente}
-                </Typography>
-                <Typography variant="title" component="p">
-                  Enfants dévorés
-                  {!_.isEmpty(datas) &&
-                    datas.toilettes[witchOne].nbrEnfantsDévorés}
-                </Typography>
-                <Typography variant="title" component="p">
-                  Urines / cacahuete:
-                  {!_.isEmpty(datas) && datas.toilettes[witchOne].HS}
-                </Typography>
-              </CardContent>
-            </div>
-          )}
 
           <CardActions className={classes.actions} disableActionSpacing>
             <IconButton aria-label="Add to favorites">
@@ -334,10 +286,10 @@ class ShowResults extends React.Component {
             </CardContent>
           </Collapse>
         </Card>
+}
 <Button color="inherit" component={Accueil}>
 Accueil
 </Button>
-      </div>
       </div>
     );
   }
@@ -348,7 +300,6 @@ function mapStateToProps(state) {
     datas: state.datasReducer.datas,
     loading: state.datasReducer.loading,
     error: state.datasReducer.error,
-    whichOne: state.whichOne
   };
 }
 
