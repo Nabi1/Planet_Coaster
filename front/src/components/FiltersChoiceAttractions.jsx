@@ -28,39 +28,52 @@ class FiltersChoiceAttractions extends React.Component {
     super(props);
     this.state = {
       wichType: 'attractions',
+      value1:false,
+      value2:false,
+      value3:false,
+      value4:false
     };
     this.props.fetchDatas();
+    this.handleChange = this.handleChange.bind(this);
+
+  }
+
+  handleChange(e){
+    this.setState({value1 : (this.state.value1===false) ? true: false})
   }
 
   render() {
     const { classes, datas } = this.props;
-    const { isAttractions, isResto, isToilettes, witchOne } = this.state;
     return (
       <div>
         <div class="mdc-form-field">
-          <div class="mdc-checkbox">
+          <div class="mdc-checkbox" value={this.state.value}>
             <label for="checkbox-1">Nombre de vomis faible</label>
             <input type="checkbox"
                    class="mdc-checkbox__native-control"
-                   id="checkbox-1"/>
+                   id="checkbox-1"
+                   onChange={this.handleChange}/>
           </div>
           <div class="mdc-checkbox">
             <label for="checkbox-2">Moins de 400 chaussures perdues</label>
             <input type="checkbox"
                    class="mdc-checkbox__native-control"
-                   id="checkbox-2"/>
+                   id="checkbox-2"
+                   onChange={this.handleChange}/>
           </div>
           <div class="mdc-checkbox">
             <label for="checkbox-3">Pas de mort</label>
             <input type="checkbox"
                    class="mdc-checkbox__native-control"
-                   id="checkbox-3"/>
+                   id="checkbox-3"
+                   onChange={this.handleChange}/>
           </div>
           <div class="mdc-checkbox">
             <label for="checkbox-4">Moins de 50 vis manquantes</label>
             <input type="checkbox"
                    class="mdc-checkbox__native-control"
-                   id="checkbox-4"/>
+                   id="checkbox-4"
+                   onChange={this.handleChange}/>
           </div>
         </div>
       </div>

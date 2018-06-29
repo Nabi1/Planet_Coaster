@@ -28,7 +28,7 @@ class Map extends Component {
         <img className={classes.map} src={map} />
         {!_.isEmpty(datas) &&
           datas.attractions.map(data => (
-            <img key={data.id} src={data.srcLogo} style={data.style} />
+            <img key={data.id} src={data.srcLogo} style={data.style} id={data.id} />
           ))}
         {!_.isEmpty(datas) &&
           datas.resto.map(data => (

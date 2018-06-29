@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip';
 class Toolips extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       onClickMessage: ''
      };
   }
@@ -16,7 +16,7 @@ class Toolips extends Component {
     render () {
      return(
       <div>
-        <a data-tip='INFOS' onClick={this.ShowMessage}>HERE</a>
+        <a data-tip='INFOS' onClick={this.ShowMessage()}>HERE</a>
          <ReactTooltip delayHide={2000} effect='solid'/>
       </div>
     )
@@ -24,6 +24,3 @@ class Toolips extends Component {
 }
 
 export default Toolips;
-
-
-

@@ -31,6 +31,10 @@
   margin:0.5em 0 0.5em 0.5em;
 }
 
+
+.visibility{
+  opacity: 1;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -159,7 +159,7 @@ class ShowResults extends React.Component {
         {this.state.isAttractions && <FiltersChoiceAttractions /> }
         {this.state.isResto && <FiltersChoiceResto /> }
         {this.state.isToilettes && <FiltersChoiceToilettes />}
-        
+
         <Card className={classes.card}>
 
           {/* ATTRACTIONS */}
