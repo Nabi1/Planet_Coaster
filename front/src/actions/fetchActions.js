@@ -1,19 +1,16 @@
 export function fetchDatas() {
-  console.log('fetchDatas');
 
-  return dispatch => {
-    dispatch(fetchProductsBegin());
-    return fetch(
-      'https://rawgit.com/Nabi1/Planet_Coaster/dev/front/src/data.json'
-    )
-      .then(handleErrors)
-      .then(res => res.json())
-      .then(json => {
-        dispatch(fetchProductsSuccess(json));
-        return json;
-      })
-      .catch(error => dispatch(fetchProductsError(error)));
-  };
+    return (dispatch) => {
+        dispatch(fetchProductsBegin());
+        return fetch("https://rawgit.com/Nabi1/Planet_Coaster/dev/front/src/data.json")
+            .then(handleErrors)
+            .then(res => res.json())
+            .then(json => {
+            dispatch(fetchProductsSuccess(json));
+            return json;
+            })
+            .catch(error => dispatch(fetchProductsError(error)));
+    };
 }
 
 // Handle HTTP errors since fetch won't.
@@ -43,10 +40,11 @@ export const fetchProductsError = error => ({
   payload: { error },
 });
 
-export const showDataBox = witchOne => ({
+export const showDataBox = witchOne => {
+  return({
   type: SHOW_DATA_BOX,
-  payload: { witchOne },
-});
+  payload: witchOne-1 ,
+})};
 
 export const filter = () => ({
   type: 'ATTRACTION',
@@ -63,4 +61,5 @@ export const filterToilette = () => ({
 export const filterSortie = () => ({
   type: 'SORTIES',
 });
+
 

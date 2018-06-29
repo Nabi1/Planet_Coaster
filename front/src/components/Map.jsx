@@ -12,6 +12,7 @@ const styles = theme => ({
   parentMap: {
     width: '100%',
     overflow: 'auto',
+    position: 'relative',
   },
   formControl: {
     margin: theme.spacing.unit,
@@ -25,9 +26,9 @@ const styles = theme => ({
 
 class Map extends Component {
   switchType = item => {
-    this.setState({
-      witchOne: item,
-    });
+    this.props.showDataBox(item);
+
+
   };
 
   render() {
@@ -97,6 +98,9 @@ class Map extends Component {
                 style={data.style}
                 alt={data.name}
               />
+              <img  onClick={() => {
+                        this.props.showDataBox(data.id);
+                      }} key={data.id} src={data.srcLogo} style={data.style} alt={data.name}/>
             </Tooltip>
           ))}
       </div>
@@ -105,6 +109,7 @@ class Map extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state)
   return {
     datas: state.datasReducer.datas,
     loading: state.datasReducer.loading,

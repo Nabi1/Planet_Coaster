@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Map from './components/Map';
 
 import AllComponents from './components/AllComponents';
-
+import Home from './components/HomePage';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        
-        <h1>BIENVENUE A DESPAIRWORLD</h1>
-        <AllComponents/>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/carte" component={AllComponents} />
+          <Home />
+        </Switch>
       </div>
     );
   }

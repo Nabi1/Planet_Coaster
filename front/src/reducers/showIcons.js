@@ -50,7 +50,6 @@ const showIconsReducer = (state = initState, action) => {
         isResto: false,
         isToilettes: true,
         isSortie: false,
-
         witchOne: 0,
         goClick: false,
         wichType: 'attractions',

@@ -28,6 +28,11 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import FiltersChoiceAttractions from './FiltersChoiceAttractions';
+import FiltersChoiceResto  from './FiltersChoiceResto';
+import FiltersChoiceToilettes from './FiltersChoiceToilettes';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   card: {
@@ -55,11 +60,34 @@ const styles = theme => ({
   },
 });
 
+const Accueil = props => <Link to="/" {...props} />;
+
 class ShowResults extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      expanded: false,
+      loaded: false,
+      isAttractions: true,
+      isResto: false,
+      isToilettes: false,
+      isOnMap:false,
+      witchOne: 0,
+      goClick: false,
+      wichType: 'attractions',
+    };
     this.props.fetchDatas();
   }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.whichOne !== this.state.witchOne) {
+      this.setState({
+        witchOne:nextProps.whichOne,
+        isOnMap:false,
+      });
+
+    }
+  } 
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -85,7 +113,11 @@ class ShowResults extends React.Component {
       filterResto,
       filterToilette,
       filterSortie,
+      
     } = this.props;
+    const witchOne= this.props.whichOne
+    const { isAttractions, isResto, isToilettes, isOnMap } = this.state;
+    console.log("youhou",witchOne)
     return (
       <div>
         <ul>
@@ -105,6 +137,7 @@ class ShowResults extends React.Component {
               </li>
             ))}
         </ul>
+
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="uncontrolled-native">Type</InputLabel>
           <NativeSelect
@@ -146,20 +179,26 @@ class ShowResults extends React.Component {
             </option>
           </NativeSelect>
         </FormControl>
+
+        {this.state.isAttractions && <FiltersChoiceAttractions /> }
+        {this.state.isResto && <FiltersChoiceResto /> }
+        {this.state.isToilettes && <FiltersChoiceToilettes />}
+        
         <Card className={classes.card}>
+
           {/* ATTRACTIONS */}
           {showIcons.isAttractions && (
             <div>
               <CardHeader
                 title={
                   !_.isEmpty(datas) &&
-                  datas.attractions[showIcons.witchOne].name
+                  datas.attractions[witchOne].name
                 }
               />
               <CardMedia
                 className={classes.media}
                 image={
-                  !_.isEmpty(datas) && datas.attractions[showIcons.witchOne].src
+                  !_.isEmpty(datas) && datas.attractions[witchOne].src
                 }
                 title="Contemplative Reptile"
               />
@@ -167,22 +206,22 @@ class ShowResults extends React.Component {
                 <Typography variant="title" component="p">
                   Morts:{' '}
                   {!_.isEmpty(datas) &&
-                    datas.attractions[showIcons.witchOne].nbrMorts}
+                    datas.attractions[witchOne].nbrMorts}
                 </Typography>
                 <Typography variant="title" component="p">
                   Chaussures perdues:{' '}
                   {!_.isEmpty(datas) &&
-                    datas.attractions[showIcons.witchOne].nbrChaussuresPerdues}
+                    datas.attractions[witchOne].nbrChaussuresPerdues}
                 </Typography>
                 <Typography variant="title" component="p">
                   Vomis:{' '}
                   {!_.isEmpty(datas) &&
-                    datas.attractions[showIcons.witchOne].nbrVomis}
+                    datas.attractions[witchOne].nbrVomis}
                 </Typography>
                 <Typography variant="title" component="p">
                   Vis manquantes:{' '}
                   {!_.isEmpty(datas) &&
-                    datas.attractions[showIcons.witchOne].nbrVisManquantes}
+                    datas.attractions[witchOne].nbrVisManquantes}
                 </Typography>
               </CardContent>
             </div>
@@ -192,36 +231,36 @@ class ShowResults extends React.Component {
             <div>
               <CardHeader
                 title={
-                  !_.isEmpty(datas) && datas.resto[showIcons.witchOne].name
+                  !_.isEmpty(datas) && datas.resto[witchOne].name
                 }
               />
               <CardMedia
                 className={classes.media}
-                image={!_.isEmpty(datas) && datas.resto[showIcons.witchOne].src}
+                image={!_.isEmpty(datas) && datas.resto[witchOne].src}
                 title={
-                  !_.isEmpty(datas) && datas.resto[showIcons.witchOne].name
+                  !_.isEmpty(datas) && datas.resto[witchOne].name
                 }
               />
               <CardContent style={{ textAlign: 'left' }}>
                 <Typography variant="title" component="p">
                   Intoxications:{' '}
                   {!_.isEmpty(datas) &&
-                    datas.resto[showIcons.witchOne].nbrIntoxications}
+                    datas.resto[witchOne].nbrIntoxications}
                 </Typography>
                 <Typography variant="title" component="p">
                   Poils pubiens / assiette:{' '}
                   {!_.isEmpty(datas) &&
-                    datas.resto[showIcons.witchOne]
+                    datas.resto[witchOne]
                       .poilsPubiensMoyenParAssiette}
                 </Typography>
                 <Typography variant="title" component="p">
                   Urines/cacahuete:{' '}
                   {!_.isEmpty(datas) &&
-                    datas.resto[showIcons.witchOne].nbrUrinesDiffParCacahuete}
+                    datas.resto[witchOne].nbrUrinesDiffParCacahuete}
                 </Typography>
                 <Typography variant="title" component="p">
                   Rats:{' '}
-                  {!_.isEmpty(datas) && datas.resto[showIcons.witchOne].nbrRats}
+                  {!_.isEmpty(datas) && datas.resto[witchOne].nbrRats}
                 </Typography>
               </CardContent>
             </div>
@@ -231,13 +270,13 @@ class ShowResults extends React.Component {
             <div>
               <CardHeader
                 title={
-                  !_.isEmpty(datas) && datas.toilettes[showIcons.witchOne].name
+                  !_.isEmpty(datas) && datas.toilettes[witchOne].name
                 }
               />
               <CardMedia
                 className={classes.media}
                 image={
-                  !_.isEmpty(datas) && datas.toilettes[showIcons.witchOne].src
+                  !_.isEmpty(datas) && datas.toilettes[witchOne].src
                 }
                 title="Contemplative Reptile"
               />
@@ -245,16 +284,16 @@ class ShowResults extends React.Component {
                 <Typography variant="title" component="p">
                   Temps d'attente:
                   {!_.isEmpty(datas) &&
-                    datas.toilettes[showIcons.witchOne].tempsAttente}
+                    datas.toilettes[witchOne].tempsAttente}
                 </Typography>
                 <Typography variant="title" component="p">
                   Enfants dévorés
                   {!_.isEmpty(datas) &&
-                    datas.toilettes[showIcons.witchOne].nbrEnfantsDévorés}
+                    datas.toilettes[witchOne].nbrEnfantsDévorés}
                 </Typography>
                 <Typography variant="title" component="p">
                   Urines / cacahuete:
-                  {!_.isEmpty(datas) && datas.toilettes[showIcons.witchOne].HS}
+                  {!_.isEmpty(datas) && datas.toilettes[witchOne].HS}
                 </Typography>
               </CardContent>
             </div>
@@ -264,13 +303,13 @@ class ShowResults extends React.Component {
             <div>
               <CardHeader
                 title={
-                  !_.isEmpty(datas) && datas.sortiesSecours[showIcons.witchOne].name
+                  !_.isEmpty(datas) && datas.sortiesSecours[witchOne].name
                 }
               />
               <CardMedia
                 className={classes.media}
                 image={
-                  !_.isEmpty(datas) && datas.sortiesSecours[showIcons.witchOne].src
+                  !_.isEmpty(datas) && datas.sortiesSecours[witchOne].src
                 }
                 title="Contemplative Reptile"
               />
@@ -278,16 +317,44 @@ class ShowResults extends React.Component {
                 <Typography variant="title" component="p">
                   Temps d'attente:
                   {!_.isEmpty(datas) &&
-                    datas.sortiesSecours[showIcons.witchOne].tempsAttente}
+                    datas.sortiesSecours[witchOne].tempsAttente}
                 </Typography>
                 <Typography variant="title" component="p">
                   Enfants dévorés
                   {!_.isEmpty(datas) &&
-                    datas.sortiesSecours[showIcons.witchOne].nbrEnfantsDévorés}
+                    datas.sortiesSecours[witchOne].nbrEnfantsDévorés}
                 </Typography>
                 <Typography variant="title" component="p">
                   Urines / cacahuete:
-                  {!_.isEmpty(datas) && datas.sortiesSecours[showIcons.witchOne].HS}
+                  {!_.isEmpty(datas) && datas.sortiesSecours[witchOne].HS}
+                </Typography>
+              </CardContent>
+            </div>
+          )}
+          {/* ID on MAP */}
+          {isOnMap && (
+            <div>
+              <CardHeader
+                title={!_.isEmpty(datas) && datas.toilettes[witchOne].name}
+              />
+              <CardMedia
+                className={classes.media}
+                image={!_.isEmpty(datas) && datas.toilettes[witchOne].src}
+                title="Contemplative Reptile"
+              />
+              <CardContent style={{ textAlign: 'left' }}>
+                <Typography variant="title" component="p">
+                  Temps d'attente:
+                  {!_.isEmpty(datas) && datas.toilettes[witchOne].tempsAttente}
+                </Typography>
+                <Typography variant="title" component="p">
+                  Enfants dévorés
+                  {!_.isEmpty(datas) &&
+                    datas.toilettes[witchOne].nbrEnfantsDévorés}
+                </Typography>
+                <Typography variant="title" component="p">
+                  Urines / cacahuete:
+                  {!_.isEmpty(datas) && datas.toilettes[witchOne].HS}
                 </Typography>
               </CardContent>
             </div>
@@ -316,18 +383,23 @@ class ShowResults extends React.Component {
             </CardContent>
           </Collapse>
         </Card>
+}
+<Button color="inherit" component={Accueil}>
+Accueil
+</Button>
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  console.log(state);
+  console.log("youhou2",state)
   return {
     datas: state.datasReducer.datas,
     loading: state.datasReducer.loading,
     error: state.datasReducer.error,
     showIcons: state.showIconsReducer,
+    whichOne: state.whichOne
   };
 }
 
