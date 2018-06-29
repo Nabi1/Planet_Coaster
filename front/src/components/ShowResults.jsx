@@ -25,6 +25,8 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import FiltersChoiceAttractions from './FiltersChoiceAttractions';
 import FiltersChoiceResto  from './FiltersChoiceResto';
 import FiltersChoiceToilettes from './FiltersChoiceToilettes';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   card: {
@@ -51,6 +53,8 @@ const styles = theme => ({
     backgroundColor: red[500],
   },
 });
+
+const Accueil = props => <Link to="/" {...props} />;
 
 class ShowResults extends React.Component {
   constructor(props) {
@@ -317,8 +321,10 @@ class ShowResults extends React.Component {
             </CardContent>
           </Collapse>
         </Card>
-        {    console.log(this.state.choice)
 }
+<Button color="inherit" component={Accueil}>
+Accueil
+</Button>
       </div>
     );
   }

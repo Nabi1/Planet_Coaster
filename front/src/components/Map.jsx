@@ -35,7 +35,7 @@ class Map extends Component {
   };
   
   render() {
-    const { classes, datas, witchOne} = this.props;
+    const { classes, datas } = this.props;
     return (
       <div className={classes.parentMap}>
         <img className={classes.map} src={map}/>
