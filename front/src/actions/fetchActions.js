@@ -1,47 +1,66 @@
 export function fetchDatas() {
-  console.log("fetchDatas")
+  console.log('fetchDatas');
 
-    return (dispatch) => {
-        dispatch(fetchProductsBegin());
-        return fetch("https://rawgit.com/Nabi1/Planet_Coaster/dev/front/src/data.json")
-            .then(handleErrors)
-            .then(res => res.json())
-            .then(json => {
-            dispatch(fetchProductsSuccess(json));
-            return json;
-            })
-            .catch(error => dispatch(fetchProductsError(error)));
-    };
+  return dispatch => {
+    dispatch(fetchProductsBegin());
+    return fetch(
+      'https://rawgit.com/Nabi1/Planet_Coaster/dev/front/src/data.json'
+    )
+      .then(handleErrors)
+      .then(res => res.json())
+      .then(json => {
+        dispatch(fetchProductsSuccess(json));
+        return json;
+      })
+      .catch(error => dispatch(fetchProductsError(error)));
+  };
 }
 
 // Handle HTTP errors since fetch won't.
 function handleErrors(response) {
-if (!response.ok) {
+  if (!response.ok) {
     throw Error(response.statusText);
-}
-return response;
+  }
+  return response;
 }
 
-export const FETCH_PRODUCTS_BEGIN   = 'FETCH_PRODUCTS_BEGIN';
+export const FETCH_PRODUCTS_BEGIN = 'FETCH_PRODUCTS_BEGIN';
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
 export const SHOW_DATA_BOX = 'SHOW_DATA_BOX';
 
 export const fetchProductsBegin = () => ({
-    type: FETCH_PRODUCTS_BEGIN
+  type: FETCH_PRODUCTS_BEGIN,
 });
 
 export const fetchProductsSuccess = datas => ({
-    type: FETCH_PRODUCTS_SUCCESS,
-    payload: { datas }
+  type: FETCH_PRODUCTS_SUCCESS,
+  payload: { datas },
 });
 
 export const fetchProductsError = error => ({
-    type: FETCH_PRODUCTS_FAILURE,
-    payload: { error }
+  type: FETCH_PRODUCTS_FAILURE,
+  payload: { error },
 });
 
 export const showDataBox = witchOne => ({
-    type : SHOW_DATA_BOX,
-    payload: {witchOne}
+  type: SHOW_DATA_BOX,
+  payload: { witchOne },
 });
+
+export const filter = () => ({
+  type: 'ATTRACTION',
+});
+
+export const filterResto = () => ({
+  type: 'RESTO',
+});
+
+export const filterToilette = () => ({
+  type: 'TOILETTES',
+});
+
+export const filterSortie = () => ({
+  type: 'SORTIES',
+});
+
