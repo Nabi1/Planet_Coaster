@@ -40,7 +40,7 @@ export const fetchProductsError = error => ({
   payload: { error },
 });
 
-export const showDataBox = witchOne => {
+export const showDataBox = (witchOne) => {
   return({
   type: SHOW_DATA_BOX,
   payload: witchOne-1 ,

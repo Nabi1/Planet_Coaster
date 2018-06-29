@@ -120,24 +120,6 @@ class ShowResults extends React.Component {
     console.log("youhou",witchOne)
     return (
       <div>
-        <ul>
-          {!_.isEmpty(datas) &&
-            datas.resto.map((item, i) => (
-              <li key={i}>
-                {item.name}
-                <span>
-                  <button
-                    onClick={() => {
-                      filter();
-                    }}
-                  >
-                    Choix
-                  </button>
-                </span>
-              </li>
-            ))}
-        </ul>
-
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="uncontrolled-native">Type</InputLabel>
           <NativeSelect
