@@ -24,6 +24,7 @@ return response;
 export const FETCH_PRODUCTS_BEGIN   = 'FETCH_PRODUCTS_BEGIN';
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
+export const SHOW_DATA_BOX = 'SHOW_DATA_BOX';
 
 export const fetchProductsBegin = () => ({
     type: FETCH_PRODUCTS_BEGIN
@@ -37,4 +38,9 @@ export const fetchProductsSuccess = datas => ({
 export const fetchProductsError = error => ({
     type: FETCH_PRODUCTS_FAILURE,
     payload: { error }
+});
+
+export const showDataBox = witchOne => ({
+    type : 'SHOW_DATA_BOX',
+    payload: witchOne-1 
 });

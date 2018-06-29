@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import map from '../img/index.png';
 import _ from 'lodash';
+import Tooltip from '@material-ui/core/Tooltip';
+import compose from 'recompose/compose';
+import { bindActionCreators } from 'redux';
+import { fetchDatas, showDataBox } from '../actions/fetchActions';
 
 const styles = theme => ({
   parentMap: {
@@ -20,39 +24,50 @@ const styles = theme => ({
   map: {},
 });
 
+
+
 class Map extends Component {
+  
+  switchType = (item) => {
+    this.setState({
+      witchOne: item,
+    });
+  };
+  
   render() {
     const { classes, datas } = this.props;
     return (
       <div className={classes.parentMap}>
-        <img className={classes.map} src={map} />
-        {!_.isEmpty(datas) &&
-          datas.attractions.map(data => (
-            <img key={data.id} src={data.srcLogo} style={data.style} />
-          ))}
-        {!_.isEmpty(datas) &&
-          datas.resto.map(data => (
-            <img key={data.id} src={data.srcLogo} style={data.style} />
-          ))}
-        {!_.isEmpty(datas) &&
-          datas.toilettes.map(data => (
-            <img key={data.id} src={data.srcLogo} style={data.style} />
-          ))}
-        {!_.isEmpty(datas) &&
-          datas.sortiesSecours.map(data => (
-            <img key={data.id} src={data.srcLogo} style={data.style} />
-          ))}
+        <img className={classes.map} src={map}/>
+        {!_.isEmpty(datas) && datas.attractions.map((data) => (
+            <Tooltip title={data.name} placement="top">
+            <img  onClick={() => {
+                      this.props.showDataBox(data.id);
+                    }} key={data.id} src={data.srcLogo} style={data.style} alt={data.name}/>
+            </Tooltip>
+        ))}
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return {
-    datas: state.datasReducer.datas,
-    loading: state.datasReducer.loading,
-    error: state.datasReducer.error,
-  };
-}
+    return {
+      datas: state.datasReducer.datas,
+      loading: state.datasReducer.loading,
+      error: state.datasReducer.error,
+      witchOne: state.datasReducer.witchOne,
+    };
+  }
+ 
+  function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ fetchDatas,showDataBox }, dispatch);
+  }
 
-export default withStyles(styles)(connect(mapStateToProps)(Map));
+export default compose(
+  withStyles(styles),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
+)(Map);
