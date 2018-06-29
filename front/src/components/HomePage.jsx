@@ -71,23 +71,26 @@ const styles = theme => ({
   bonhome: {
     position: 'absolute',
     top: '80%',
-    left: '30%',
-    width: '200px',
+    left: '15%',
+    width: '260px',
     zIndex:1
   },
   alex: {
     position: 'absolute',
-    top: '82%',
-    left: '33%',
-    maxWidth: '30px',
+    top: '81%',
+    left: '18%',
+    width: '55px',
     zIndex:1
   },
   greg: {
     position: 'absolute',
-    top: '82%',
-    left: '39%',
-    maxWidth: '30px',
+    top: '81%',
+    left: '26%',
+    width: '55px',
     zIndex:1
+  },
+  img:{
+    maxWidth: '100%',
   },
   fond: {
     position: 'relative',
@@ -185,8 +188,8 @@ class Home extends Component {
         <Move className={classes.mon2}><img src={mon2} alt="Mongolfiere 2" /></Move>
         <Move2 className={classes.mon3}><img src={mon3} alt="Mongolfiere 3" /></Move2>
         <img className={classes.bonhome} src={bonhome} alt="Bonhome" />
-        <Rotate2 className={classes.alex}><img src={alex} alt="Alex" /></Rotate2>
-        <Rotate2 className={classes.greg}><img src={greg} alt="Fred" /></Rotate2>
+        <Rotate2 className={classes.alex}><img className={classes.img} src={alex} alt="Alex" /></Rotate2>
+        <Rotate2 className={classes.greg}><img className={classes.img} src={greg} alt="Fred" /></Rotate2>
       </div>
     );
   }
