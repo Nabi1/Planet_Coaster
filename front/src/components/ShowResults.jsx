@@ -52,6 +52,18 @@ const styles = theme => ({
   avatar: {
     backgroundColor: red[500],
   },
+  resultBox: {
+    padding : 40,
+    listStyle : "none",
+    textAlign: "justify",
+  },
+  formControl: {
+    paddingBottom: "50px"
+  },
+  all: {
+    marginTop: "100px",
+    marginLeft: "25px"
+  },
 });
 
 const Accueil = props => <Link to="/" {...props} />;
@@ -103,13 +115,13 @@ class ShowResults extends React.Component {
     const { isAttractions, isResto, isToilettes, witchOne, isOnMap } = this.state;
     return (
       <div>
-        <ul>
+        <ul className={classes.resultBox}>
           {!_.isEmpty(datas) &&
             datas.resto.map((item, i) => (
               <li key={i}>
                 {item.name}
                 <span>
-                  <button
+                  <button className={classes.fourResults}
                     onClick={() => {
                       this.switchType(i);
                     }}
@@ -174,6 +186,7 @@ class ShowResults extends React.Component {
         {this.state.isResto && <FiltersChoiceResto /> }
         {this.state.isToilettes && <FiltersChoiceToilettes />}
         
+        <div className={classes.all}>
         <Card className={classes.card}>
 
           {/* ATTRACTIONS */}
@@ -321,10 +334,10 @@ class ShowResults extends React.Component {
             </CardContent>
           </Collapse>
         </Card>
-}
 <Button color="inherit" component={Accueil}>
 Accueil
 </Button>
+      </div>
       </div>
     );
   }
