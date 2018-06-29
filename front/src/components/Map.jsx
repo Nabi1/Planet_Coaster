@@ -6,7 +6,7 @@ import _ from 'lodash';
 import Tooltip from '@material-ui/core/Tooltip';
 import compose from 'recompose/compose';
 import { bindActionCreators } from 'redux';
-import { fetchDatas } from '../actions/fetchActions';
+import { fetchDatas, showDataBox } from '../actions/fetchActions';
 
 const styles = theme => ({
   parentMap: {
@@ -42,7 +42,7 @@ class Map extends Component {
         {!_.isEmpty(datas) && datas.attractions.map((data) => (
             <Tooltip title={data.name} placement="top">
             <img  onClick={() => {
-                      this.switchType(data.id);
+                      this.props.showDataBox(data.id);
                     }} key={data.id} src={data.srcLogo} style={data.style} alt={data.name}/>
             </Tooltip>
         ))}
@@ -61,7 +61,7 @@ function mapStateToProps(state) {
   }
  
   function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ fetchDatas }, dispatch);
+    return bindActionCreators({ fetchDatas,showDataBox }, dispatch);
   }
 
 export default compose(

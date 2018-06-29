@@ -61,12 +61,23 @@ class ShowResults extends React.Component {
       isAttractions: true,
       isResto: false,
       isToilettes: false,
+      isOnMap:false,
       witchOne: 0,
       goClick: false,
       wichType: 'attractions',
     };
     this.props.fetchDatas();
   }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.whichOne !== this.state.witchOne) {
+      this.setState({
+        witchOne:nextProps.whichOne,
+        isOnMap:false,
+      });
+
+    }
+  } 
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -85,7 +96,7 @@ class ShowResults extends React.Component {
 
   render() {
     const { classes, datas } = this.props;
-    const { isAttractions, isResto, isToilettes, witchOne } = this.state;
+    const { isAttractions, isResto, isToilettes, witchOne, isOnMap } = this.state;
     return (
       <div>
         <ul>
@@ -119,6 +130,7 @@ class ShowResults extends React.Component {
                   isAttractions: true,
                   isResto: false,
                   isToilettes: false,
+                  isOnMap:false
                 });
               }}
               value={1}
@@ -131,6 +143,7 @@ class ShowResults extends React.Component {
                   isAttractions: false,
                   isResto: true,
                   isToilettes: false,
+                  isOnMap:false
                 });
               }}
               value={2}
@@ -143,6 +156,7 @@ class ShowResults extends React.Component {
                   isAttractions: false,
                   isResto: false,
                   isToilettes: true,
+                  isOnMap:false
                 });
               }}
               value={3}
@@ -251,6 +265,34 @@ class ShowResults extends React.Component {
               </CardContent>
             </div>
           )}
+          {/* ID on MAP */}
+          {isOnMap && (
+            <div>
+              <CardHeader
+                title={!_.isEmpty(datas) && datas.toilettes[witchOne].name}
+              />
+              <CardMedia
+                className={classes.media}
+                image={!_.isEmpty(datas) && datas.toilettes[witchOne].src}
+                title="Contemplative Reptile"
+              />
+              <CardContent style={{ textAlign: 'left' }}>
+                <Typography variant="title" component="p">
+                  Temps d'attente:
+                  {!_.isEmpty(datas) && datas.toilettes[witchOne].tempsAttente}
+                </Typography>
+                <Typography variant="title" component="p">
+                  Enfants dévorés
+                  {!_.isEmpty(datas) &&
+                    datas.toilettes[witchOne].nbrEnfantsDévorés}
+                </Typography>
+                <Typography variant="title" component="p">
+                  Urines / cacahuete:
+                  {!_.isEmpty(datas) && datas.toilettes[witchOne].HS}
+                </Typography>
+              </CardContent>
+            </div>
+          )}
 
           <CardActions className={classes.actions} disableActionSpacing>
             <IconButton aria-label="Add to favorites">
@@ -287,6 +329,7 @@ function mapStateToProps(state) {
     datas: state.datasReducer.datas,
     loading: state.datasReducer.loading,
     error: state.datasReducer.error,
+    whichOne: state.whichOne
   };
 }
 
