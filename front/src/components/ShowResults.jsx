@@ -279,7 +279,6 @@ class ShowResults extends React.Component {
             </CardContent>
           </Collapse>
         </Card>
-        {    console.log(this.state.choice)
 }
 <Button color="inherit" component={Accueil}>
 Accueil

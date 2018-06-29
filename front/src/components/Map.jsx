@@ -23,7 +23,6 @@ const styles = theme => ({
 class Map extends Component {
   render() {
     const { classes, datas } = this.props;
-    console.log('data resto', datas.resto)
     return (
       <div className={classes.parentMap}>
         <img className={classes.map} src={map} />
